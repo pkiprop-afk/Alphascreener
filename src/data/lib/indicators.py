@@ -9,3 +9,5 @@ def add_indicators():
 def build_strategy_from_inputs():
     pass
 
+def passes_screen():
+    pass
