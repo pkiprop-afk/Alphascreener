@@ -14,3 +14,6 @@ def write_json_file():
 
 def load_ticker_universe():
     pass
+
+def save_or_update_strategy():
+    pass
