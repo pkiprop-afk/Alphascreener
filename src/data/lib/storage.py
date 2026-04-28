@@ -6,6 +6,9 @@ from datetime import datetime
 def ensure_parents_exist():
     pass
 
+def timestamp_now():
+    pass
+
 def load_json_file():
     pass
 
