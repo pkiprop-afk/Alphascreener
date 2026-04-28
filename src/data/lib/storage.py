@@ -29,3 +29,6 @@ def delete_strategy():
 
 def add_to_watchlist():
     pass
+
+def append_backtest_result():
+    pass
