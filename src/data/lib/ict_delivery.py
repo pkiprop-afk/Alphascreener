@@ -32,7 +32,8 @@ def classify_candle_patterns(price_df: pd.DataFrame) -> pd.DataFrame:
 def add_delivery_state(price_df: pd.DataFrame) -> pd.DataFrame:
     df = price_df.copy()
     df["is_up_close"] = df["Close"] > df["Open"]
-    
+    df["is_down_close"] = df["Close"] < df["Open"]
+    return df
 
 def detect_cisd():
     pass
