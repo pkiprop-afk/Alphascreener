@@ -7,3 +7,7 @@ def build_trade_record():
 
 def resolve_trade():
     pass
+
+def summarize_backtest():
+    pass
+
