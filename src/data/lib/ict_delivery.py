@@ -73,5 +73,8 @@ def detect_cisd(price_df: pd.DataFrame, max_sequence: int = 5) -> pd.DataFrame:
             reference_open = float(df.iloc[bullish_sequence_start]["Open"])
             if current_close > reference_open:
                 df.at[df.index[idx], "bullish_cisd"] = True
-                df.at[]
+                df.at[df.index[idx], "cisd_reference_open"] = reference_open
+                df.at[df.index[idx], "delivery_direction"] = "bullish"
+
+    return classify_candle_patterns(df)
 
