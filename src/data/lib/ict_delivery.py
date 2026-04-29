@@ -26,6 +26,8 @@ def classify_candle_patterns(price_df: pd.DataFrame) -> pd.DataFrame:
             pattern = "bearish_rejection"
         
         df.at[df.index[idx], "candle_pattern"] = pattern
+    
+    return df
 
 def add_delivery_state():
     pass
