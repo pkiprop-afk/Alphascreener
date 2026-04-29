@@ -36,5 +36,12 @@ def add_delivery_state(price_df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 def detect_cisd(price_df: pd.DataFrame, max_sequence: int = 5) -> pd.DataFrame:
-    df 
+    df = add_delivery_state(price_df)
+    df["bullish_cisd"] = False
+    df["bearish_cisd"] = False
+    df["cisd_reference_open"] = pd.NA
+    df["delivery_direction"] = "neutral"
+    
+    for idx in range(1, len(df)):
+        bearish_sequence_start = None
 
