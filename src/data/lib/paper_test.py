@@ -11,3 +11,5 @@ def resolve_trade():
 def summarize_backtest():
     pass
 
+def run_backtest_from_signals():
+    pass
