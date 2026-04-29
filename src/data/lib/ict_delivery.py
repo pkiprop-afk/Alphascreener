@@ -44,4 +44,8 @@ def detect_cisd(price_df: pd.DataFrame, max_sequence: int = 5) -> pd.DataFrame:
     
     for idx in range(1, len(df)):
         bearish_sequence_start = None
+        bullish_sequence_start = None
+        
+        up_run = 0
+        back
 
