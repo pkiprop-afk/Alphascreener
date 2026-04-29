@@ -50,5 +50,18 @@ def detect_cisd(price_df: pd.DataFrame, max_sequence: int = 5) -> pd.DataFrame:
         back = idx - 1
         while back >= 0 and up_run < max_sequence and bool(df.iloc[back]["is_up_close"]):
             bearish_sequence_start = back
-            
+            up_run += 1
+            back -= 1
+        
+        down_run = 0
+        back = idx - 1
+        while back >= 0 and down_run < max_sequence and bool(df.iloc[back]["is_down_close"]):
+            bullish_sequence_start = back
+            down_run += 1
+            back -= 1
+        
+        current_close = float(df.iloc[idx]["Close"])
+        
+        if bearish_sequence_start is not None and up_run >= 1:
+            reference_open = float(df.iloc[bearish_sequence_start]["Open"])
 
