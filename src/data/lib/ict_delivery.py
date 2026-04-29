@@ -35,6 +35,6 @@ def add_delivery_state(price_df: pd.DataFrame) -> pd.DataFrame:
     df["is_down_close"] = df["Close"] < df["Open"]
     return df
 
-def detect_cisd():
-    pass
+def detect_cisd(price_df: pd.DataFrame, max_sequence: int = 5) -> pd.DataFrame:
+    df 
 
