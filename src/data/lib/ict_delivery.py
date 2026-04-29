@@ -11,7 +11,7 @@ def classify_candle_patterns(price_df: pd.DataFrame) -> pd.DataFrame:
         low_price = float(row["Low"])
         close_price = float(row["Close"])
         body = abs(close_price - open_price)
-        full_range = 
+        full_range = max(high_price - low_price, 1e-9)
 
 def add_delivery_state():
     pass
