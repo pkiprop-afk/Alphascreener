@@ -29,8 +29,10 @@ def classify_candle_patterns(price_df: pd.DataFrame) -> pd.DataFrame:
     
     return df
 
-def add_delivery_state(price_df: pd.DataFrame):
-    pass
+def add_delivery_state(price_df: pd.DataFrame) -> pd.DataFrame:
+    df = price_df.copy()
+    
+    
 
 def detect_cisd():
     pass
