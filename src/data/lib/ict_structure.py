@@ -12,3 +12,6 @@ def detect_structure_shift():
 def find_recent_external_liquidity():
     pass
 
+def detect_external_liquidity_sweep():
+    pass
+
