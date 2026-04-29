@@ -20,6 +20,7 @@ def classify_candle_patterns(price_df: pd.DataFrame) -> pd.DataFrame:
             pattern = "Bullish displacement"
         elif close_price < open_price and body / full_range >= 0.6:
             pattern = "Bearish displacement"
+        elif close_price > open_price
 
 def add_delivery_state():
     pass
