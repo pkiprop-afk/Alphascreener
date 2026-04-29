@@ -22,6 +22,10 @@ def classify_candle_patterns(price_df: pd.DataFrame) -> pd.DataFrame:
             pattern = "Bearish displacement"
         elif close_price > open_price and lower_wick > body:
             pattern = "Bullish rejection"
+        elif close_price < open_price and upper_wick > body:
+            pattern = "bearish_rejection"
+        
+        df.at[df.index[idx], "candle_pattern"] = pattern
 
 def add_delivery_state():
     pass
