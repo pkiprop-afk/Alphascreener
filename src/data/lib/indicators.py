@@ -44,7 +44,15 @@ def add_indicators(price_df: pd.DataFrame) -> pd.DataFrame:
     df["PctBelow52WHigh"] = ((df["High52Week"] - df["Close"]) / df["High52Week"]) * 100
     return df
 
-def build_strategy_from_inputs():
+def build_strategy_from_inputs(
+    price_min: float,
+    price_max: float,
+    rsi_min: int,
+    rsi_max: int,
+    min_rel_volume: float,
+    price_above_sma20: bool,
+    price
+):
     pass
 
 def passes_screen():
