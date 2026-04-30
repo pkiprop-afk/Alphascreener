@@ -67,7 +67,14 @@ def detect_structure_shift(price_df: pd.DataFrame, min_displacement_pct: float =
             bearish = close_price <= threshold
         
         df.at[df.index[idx], "bullish_structure_shift"] = bullish
-        df.at[d]
+        df.at[df.index[idx], "bearish_stucture_shift"] = bearish
+        
+        if bullish and not bearish:
+            df.at[df.index[idx], "structure_direction"] = "bullish"
+        elif bearish and not bullish:
+            df.at[df.index[idx], "structure_direction"] = "bearish"
+    
+    return df
 
 def find_recent_external_liquidity():
     pass
