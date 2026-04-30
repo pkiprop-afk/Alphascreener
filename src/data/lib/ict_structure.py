@@ -40,6 +40,8 @@ def add_previous_swing_levels(price_df: pd.DataFrame) -> pd.DataFrame:
     
     df["previous_swing_high"] = high_values
     df["previous_swing_low"] = low_values
+    
+    return df
 
 def detect_structure_shift():
     pass
