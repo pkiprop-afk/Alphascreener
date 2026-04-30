@@ -71,4 +71,5 @@ def price_touches_fvg(price_row: pd.Series, fvg_payload: dict | None) -> bool:
     candle_high = float(price_row["High"])
     candle_low = float(price_row["Low"])
     zone_low = min(float(top), float(bottom))
-    zone_high = max()
+    zone_high = max(float(top), float(bottom))
+    return candle_low <= zone_high and candle_high >= zone_low
