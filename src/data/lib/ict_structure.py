@@ -43,8 +43,11 @@ def add_previous_swing_levels(price_df: pd.DataFrame) -> pd.DataFrame:
     
     return df
 
-def detect_structure_shift():
-    pass
+def detect_structure_shift(price_df: pd.DataFrame, min_displacement_pct: float = 0.002) -> pd.DataFrame:
+    df = add_previous_swing_levels(price_df)
+    df["bullish_structure_shift"] = False
+    df["bearish_structure_shift"] = False
+    df["structure_direction"] = "neutral"
 
 def find_recent_external_liquidity():
     pass
