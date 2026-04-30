@@ -17,8 +17,8 @@ def add_indicators(price_df: pd.DataFrame) -> pd.DataFrame:
     df["SMA20"] = df["Close"].rolling(window=20).mean()
     df["SMA50"] = df["Close"].rolling(window=50).mean()
     df["AvgVolume20"] = df["Volume"].rolling(window=20).mean()
-    df["RelVolume"] = df["Volume"]  
-
+    df["RelVolume"] = df["Volume"]  / df["AvgVolume20"]
+    df["RSI14"]
 def build_strategy_from_inputs():
     pass
 
