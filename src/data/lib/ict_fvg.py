@@ -20,7 +20,12 @@ def detect_fvg_zones(price_df: pd.DataFrame, min_gap_pct: float = 0.001) -> pd.D
         if high_two_bars_back > 0:
             bullish_gap_pct = bullish_gap / high_two_bars_back
         else:
-            bullish_gap_pct
+            bullish_gap_pct = 0.0
+        
+        if low_two_bars_back > 0:
+            bearish_gap_pct = bearish_gap / low_two_bars_back 
+        else:
+            bearish_gap_pct = 0.0
         
         
 
