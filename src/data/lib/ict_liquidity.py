@@ -27,7 +27,13 @@ def add_liquidity_context(price_df: pd.DataFrame, liquidity_lookback: int = 40) 
         if external_low is not None:
             df.at[df.index[idx], "touches_external_low"] = candle_low <= float(external_low)
         
+        recent_fvg_context = find_recent_fvg_context(df, idx, lookback=min(liquidity_lookback, 12))
+        has_internal_touch = price_touches_fvg(row, recent_fvg_context.get("latest_bullish_fvg")) or price_touches_fvg(
+            row, recent_fvg_context.get("latest_bearish_fvg")
+        )
+        df.at[df.index[idx], "touches_internal_liquidity"] = has_internal_touch
         
+    return df
 
 def summarize_liquidity():
     pass 
