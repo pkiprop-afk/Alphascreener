@@ -51,9 +51,14 @@ def build_strategy_from_inputs(
     rsi_max: int,
     min_rel_volume: float,
     price_above_sma20: bool,
-    price
-):
-    pass
+    price_above_sma50: bool,
+    max_pct_from_52w_high: int,
+    lookback_period: str,
+    universe_size: int,
+) -> dict:
+    return {
+        
+    }
 
 def passes_screen():
     pass
