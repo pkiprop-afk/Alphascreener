@@ -18,7 +18,9 @@ def add_indicators(price_df: pd.DataFrame) -> pd.DataFrame:
     df["SMA50"] = df["Close"].rolling(window=50).mean()
     df["AvgVolume20"] = df["Volume"].rolling(window=20).mean()
     df["RelVolume"] = df["Volume"]  / df["AvgVolume20"]
-    df["RSI14"]
+    df["RSI14"] = calculate_rsi(df["Close"], window=14)
+    df["High52Week"] = df["High"].rolling(window=min(len(df), 252), min_periods=1).max()
+    df
 def build_strategy_from_inputs():
     pass
 
