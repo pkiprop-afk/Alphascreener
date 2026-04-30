@@ -1,7 +1,10 @@
 import pandas as pd 
 
-def detect_swings(price_df):
-    pass
+def detect_swings(price_df: pd.DataFrame, swing_window: int = 3) -> pd.DataFrame:
+    df = price_df.copy()
+    df["swing_high"] = False
+    df["swing_low"] =False
+    df["swing_high_value"] = pd.NA
 
 def add_previous_swing_levels():
     pass
