@@ -43,6 +43,7 @@ def add_indicators(price_df: pd.DataFrame) -> pd.DataFrame:
     df["High52Week"] = df["High"].rolling(window=min(len(df), 252), min_periods=1).max()
     df["PctBelow52WHigh"] = ((df["High52Week"] - df["Close"]) / df["High52Week"]) * 100
     return df
+
 def build_strategy_from_inputs():
     pass
 
