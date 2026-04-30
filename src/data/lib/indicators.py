@@ -69,5 +69,7 @@ def build_strategy_from_inputs(
         "universe_size": universe_size,
     }
 
-def passes_screen():
+def passes_screen(latest_row: pd.Series, criteria: dict) -> bool:
+    close_price = float(latest_row["Close"])
+    price_ok = criteria["price_min"]
     pass
