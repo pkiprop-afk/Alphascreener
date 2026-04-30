@@ -1,6 +1,17 @@
 import pandas as pd 
 
 def calculate_rsi(close_series: pd.Series, window: int = 14) -> pd.Series:
+    """ 
+    Compute the Relative Strength Index (RSI) for a series of closing prices.
+    The function returns a smoothed momentum oscillator scaled between 0 and 100.
+
+    Args:
+        close_series: Series of closing prices indexed over time.
+        window: Lookback period used to calculate average gains and losses.
+
+    Returns:
+        A pandas Series containing the RSI values aligned with the input index.
+    """
     delta = close_series.diff()
     gains = delta.clip(lower=0)
     losses = -delta.clip(upper=0)
