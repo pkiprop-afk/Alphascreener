@@ -27,6 +27,9 @@ def detect_fvg_zones(price_df: pd.DataFrame, min_gap_pct: float = 0.001) -> pd.D
         else:
             bearish_gap_pct = 0.0
         
+        if bullish_gap > 0 and bullish_gap_pct >= min_gap_pct:
+            df.at[df.index[idx], "bullish fvg"]
+        
         
 
 def find_recent_fvg_context():
