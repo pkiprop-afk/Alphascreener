@@ -41,8 +41,14 @@ def detect_fvg_zones(price_df: pd.DataFrame, min_gap_pct: float = 0.001) -> pd.D
     
     return df
 
-def find_recent_fvg_context():
-    pass
+def find_recent_fvg_context(price_df: pd.DataFrame, end_index: int, lookback: int = 12) -> dict:
+    start_index = max(0, end_index - lookback)
+    recent = price_df.iloc[start_index : end_index + 1]
+    
+    bullish = recent[recent["bullish_fvg"] == True]
+    bearish = recent[recent["bearish_fvg"] == True]
+    
+    latest_bullish = bullish.iloc[-1].to_dict() 
 
 def price_touches_fvg():
     pass
