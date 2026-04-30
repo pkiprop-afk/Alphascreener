@@ -90,6 +90,23 @@ def find_recent_external_liquidity(price_df: pd.DataFrame, end_index: int, lookb
         "external_low": last_swing_low,
     }
 
-def detect_external_liquidity_sweep():
-    pass
+def detect_external_liquidity_sweep(price_df: pd.DataFrame) -> pd.DataFrame:
+    df = price_df.copy()
+    df["swept_external_liquidity"] = False
+    df["swept_external_low"] = False
+    
+    for idx in range(len(df)):
+        high_level = df.iloc[idx]["previous_swing_high"]
+        low_level = df.iloc[idx]["previous_swing_low"]
+        candle_high = float(df.iloc[idx]["High"])
+        candle_low = float(df.iloc[idx]["Low"])
+        close_price = float(df.iloc[idx]["Close"])
+        
+        if pd.notna(high_level):
+            swept_high = candle_high > float(high_level) and close_price <  candle_high
+            df.at[df.index[idx], "swept_external_high"] = swept_high
+        
+        if pd.notna(low_level):
+            swept_low = candle_low < float(low_level) and close_price > candle_low
+            df.at[df.index[idx],]
 
