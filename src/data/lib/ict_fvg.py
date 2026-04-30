@@ -14,7 +14,15 @@ def detect_fvg_zones(price_df: pd.DataFrame, min_gap_pct: float = 0.001) -> pd.D
         current_low = float(df.iloc[idx]["Low"])
         current_high = float(df.iloc[idx]["High"])
         
-        bullish_gap = current_high
+        bullish_gap = current_high - low_two_bars_back
+        bearish_gap = low_two_bars_back - current_high
+        
+        if high_two_bars_back > 0:
+            bullish_gap_pct = bullish_gap / high_two_bars_back
+        else:
+            bullish_gap_pct
+        
+        
 
 def find_recent_fvg_context():
     pass
