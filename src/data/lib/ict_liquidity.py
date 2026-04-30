@@ -38,5 +38,8 @@ def add_liquidity_context(price_df: pd.DataFrame, liquidity_lookback: int = 40) 
 def summarize_liquidity(price_df: pd.DataFrame, end_index: int) -> dict:
     row = price_df.iloc[end_index]
     return {
+        "external_high": row.get("external_high"),
+        "external_low": row.get("external_low"),
+        "touches_internal_liquidity": bool(row.get("touches_internal_liquidity", False)),
         
     }
