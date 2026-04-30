@@ -48,7 +48,8 @@ def find_recent_fvg_context(price_df: pd.DataFrame, end_index: int, lookback: in
     bullish = recent[recent["bullish_fvg"] == True]
     bearish = recent[recent["bearish_fvg"] == True]
     
-    latest_bullish = bullish.iloc[-1].to_dict() 
+    latest_bullish = None if bullish.empty else bullish.iloc[-1].to_dict()
+    latest_bearish = bearish.iloc
 
 def price_touches_fvg():
     pass
