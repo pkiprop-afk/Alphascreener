@@ -70,6 +70,17 @@ def build_strategy_from_inputs(
     }
 
 def passes_screen(latest_row: pd.Series, criteria: dict) -> bool:
+    """ 
+    Evaluate whether a stock's latest metrics satisfy a set of screening criteria.
+    The function checks price, momentum, volume, and trend conditions to determine if the symbol should pass the screen.
+
+    Args:
+        latest_row: A row of price and indicator data, typically the most recent row from a processed DataFrame.
+        criteria: Dictionary of screening thresholds and boolean flags defining the desired trade setup.
+
+    Returns:
+        True if all configured screening conditions are met, otherwise False.
+    """
     close_price = float(latest_row["Close"])
     price_ok = criteria["price_min"] <= close_price <= criteria["price_max"]
     rsi_ok = criteria["rsi_min"] <= float(latest_row["RSI14"] <= criteria["rsi_max"])
