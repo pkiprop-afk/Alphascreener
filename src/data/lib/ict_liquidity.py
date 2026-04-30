@@ -21,6 +21,11 @@ def add_liquidity_context(price_df: pd.DataFrame, liquidity_lookback: int = 40) 
         row = df.iloc[idx]
         candle_high = float(row["High"])
         candle_low = float(row["Low"])
+        
+        if external_high is not None:
+            df.at[df.index[idx], "touches_external_high"] = candle_high >= float(external_high)
+        if external_low is not None:
+            df.at[df.index[idx], "touches "]
 
 def summarize_liquidity():
     pass 
