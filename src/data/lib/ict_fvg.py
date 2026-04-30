@@ -2,8 +2,11 @@ import pandas as pd
 
 def detect_fvg_zones(price_df: pd.DataFrame, min_gap_pct: float = 0.001) -> pd.DataFrame:
     df = price_df.copy()
+    
+    # Initializing columns
     df["bullish_fvg"] = False
     df["bearish_fvg"] = False
+    
     df["fvg_top"] = pd.NA
     df["fvg_bottom"] = pd.NA
     df["fvg_gap_pct"] = 0.0
