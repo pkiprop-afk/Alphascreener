@@ -57,6 +57,12 @@ def build_strategy_from_inputs(
     universe_size: int,
 ) -> dict:
     return {
+        "price_min": float(price_min),
+        "price_max": float(price_max),
+        "rsi_min": int(rsi_min),
+        "rsi_max": int(rsi_max),
+        "min_rel_volume": float(min_rel_volume),
+        "price_above_sma20": bool()
         
     }
 
