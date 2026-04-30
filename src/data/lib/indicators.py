@@ -57,17 +57,16 @@ def build_strategy_from_inputs(
     universe_size: int,
 ) -> dict:
     return {
-        "price_min": float(price_min),
-        "price_max": float(price_max),
-        "rsi_min": int(rsi_min),
-        "rsi_max": int(rsi_max),
-        "min_rel_volume": float(min_rel_volume),
-        "price_above_sma20": bool(price_above_sma20),
-        "price_above_sma50": bool(price_above_sma50),
-        "max_pct_from_52w_high": int(max_pct_from_52w_high),
-        "lookback_period": str(lookback_period),
-        "universe_size": int(universe_size),
-        
+        "price_min": price_min,
+        "price_max": price_max,
+        "rsi_min": rsi_min,
+        "rsi_max": rsi_max,
+        "min_rel_volume": min_rel_volume,
+        "price_above_sma20": price_above_sma20,
+        "price_above_sma50": price_above_sma50,
+        "max_pct_from_52w_high": max_pct_from_52w_high,
+        "lookback_period": lookback_period,
+        "universe_size": universe_size,
     }
 
 def passes_screen():
