@@ -71,5 +71,7 @@ def build_strategy_from_inputs(
 
 def passes_screen(latest_row: pd.Series, criteria: dict) -> bool:
     close_price = float(latest_row["Close"])
-    price_ok = criteria["price_min"]
-    pass
+    price_ok = criteria["price_min"] <= close_price <= criteria["price_max"]
+    rsi_ok = criteria["rsi_min"] <= float(latest_row["RSI14"] <= criteria["rsi_max"])
+    volume_ok = float(latest_row["RelVolume"]) >= criteria["min_rel_volume"]
+    high_ok = float(latest_row["PctBelow52WHigh"]) <= criteria["max_pct_from_52w_high"]
