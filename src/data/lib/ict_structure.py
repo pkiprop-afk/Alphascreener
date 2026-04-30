@@ -48,6 +48,12 @@ def detect_structure_shift(price_df: pd.DataFrame, min_displacement_pct: float =
     df["bullish_structure_shift"] = False
     df["bearish_structure_shift"] = False
     df["structure_direction"] = "neutral"
+    
+    for idx in range(len(df)):
+        row = df.iloc[idx]
+        close_price = float(row["Close"])
+        previous_high = row["previous_swing_high"]
+        previous_low = row["previous_swing_low"]
 
 def find_recent_external_liquidity():
     pass
