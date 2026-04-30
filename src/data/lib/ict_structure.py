@@ -1,6 +1,6 @@
 import pandas as pd 
 
-def detect_swings():
+def detect_swings(price_df):
     pass
 
 def add_previous_swing_levels():
