@@ -15,7 +15,12 @@ def add_liquidity_context(price_df: pd.DataFrame, liquidity_lookback: int = 40) 
         external = find_recent_external_liquidity(df, idx, lookback=liquidity_lookback)
         external_high = external.get("external_high")
         external_low = external.get("external_low")
+        df.at[df.index[idx], "external_high"] = external_high
+        df.at[df.index[idx], "external_low"] = external_low
         
+        row = df.iloc[idx]
+        candle_high = float(row["High"])
+        candle_low = float(row["Low"])
 
 def summarize_liquidity():
     pass 
