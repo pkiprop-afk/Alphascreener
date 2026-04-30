@@ -108,5 +108,7 @@ def detect_external_liquidity_sweep(price_df: pd.DataFrame) -> pd.DataFrame:
         
         if pd.notna(low_level):
             swept_low = candle_low < float(low_level) and close_price > candle_low
-            df.at[df.index[idx],]
+            df.at[df.index[idx], "swept_external_low"] = swept_low
+
+    return df
 
