@@ -1,6 +1,6 @@
 import pandas as pd 
 
-def calculate_rsi():
+def calculate_rsi(close_series: pd.Series):
     pass
 
 def add_indicators():
