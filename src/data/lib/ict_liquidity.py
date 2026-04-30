@@ -10,7 +10,12 @@ def add_liquidity_context(price_df: pd.DataFrame, liquidity_lookback: int = 40) 
     df["touches_internal_liquidity"] = False
     df["touches_external_high"] = False
     df["touches_external_low"] = False
+    
+    for idx in range(len(df)):
+        external = find_recent_external_liquidity(df, idx, lookback=liquidity_lookback)
+        external_high = external.get("external_high")
+        external_low = external.get("external_low")
+        
 
 def summarize_liquidity():
     pass 
-
