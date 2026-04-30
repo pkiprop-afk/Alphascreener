@@ -12,8 +12,10 @@ def calculate_rsi(close_series: pd.Series, window: int = 14) -> pd.Series:
     rsi = 100 - (100 / (1 + rs))
     return rsi.fillna(50)
 
-def add_indicators():
-    pass
+def add_indicators(price_df: pd.DataFrame) -> pd.DataFrame:
+    df = price_df.copy()
+    df["SMA20"] = df["Close"].rolling(window=20).mean()
+    df["SMA50"] = df["Close"].rolling(window=50).mean()
 
 def build_strategy_from_inputs():
     pass
