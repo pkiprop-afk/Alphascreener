@@ -28,7 +28,10 @@ def detect_fvg_zones(price_df: pd.DataFrame, min_gap_pct: float = 0.001) -> pd.D
             bearish_gap_pct = 0.0
         
         if bullish_gap > 0 and bullish_gap_pct >= min_gap_pct:
-            df.at[df.index[idx], "bullish fvg"]
+            df.at[df.index[idx], "bullish fvg"] = True
+            df.at[df.index[idx], "fvg_bottom"] = high_two_bars_back
+            df.at[df.index[idx], "fvg_top"] = current_low
+            df.at[df.index[idx], "fvg_gap_pct"] = round(bullish_gap_pct, 6)
         
         
 
