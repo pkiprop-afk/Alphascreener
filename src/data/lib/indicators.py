@@ -24,6 +24,16 @@ def calculate_rsi(close_series: pd.Series, window: int = 14) -> pd.Series:
     return rsi.fillna(50)
 
 def add_indicators(price_df: pd.DataFrame) -> pd.DataFrame:
+    """ 
+    Add common technical indicators and derived metrics to a price DataFrame.
+    The function returns a new DataFrame containing moving averages, volume statistics, and momentum measures.
+
+    Args:
+        price_df: OHLCV price data with at least 'Close', 'High', and 'Volume' columns.
+
+    Returns:
+        A copy of the input DataFrame with additional columns for moving averages, relative volume, RSI, and 52-week high statistics.
+    """
     df = price_df.copy()
     df["SMA20"] = df["Close"].rolling(window=20).mean()
     df["SMA50"] = df["Close"].rolling(window=50).mean()
