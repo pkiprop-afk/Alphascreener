@@ -59,5 +59,16 @@ def find_recent_fvg_context(price_df: pd.DataFrame, end_index: int, lookback: in
     }
     
 
-def price_touches_fvg():
-    pass
+def price_touches_fvg(price_row: pd.Series, fvg_payload: dict | None) -> bool:
+    if not fvg_payload:
+        return False
+    
+    top = fvg_payload.get("fvg_top")
+    bottom =  fvg_payload.get("fvg_bottom")
+    if pd.isna(top) or pd.isna(bottom):
+        return False
+    
+    candle_high = float(price_row["High"])
+    candle_low = float(price_row["Low"])
+    zone_low = min(float(top), float(bottom))
+    zone_high = max()
