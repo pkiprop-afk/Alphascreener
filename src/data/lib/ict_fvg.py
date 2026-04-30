@@ -7,6 +7,10 @@ def detect_fvg_zones(price_df: pd.DataFrame, min_gap_pct: float = 0.001) -> pd.D
     df["fvg_top"] = pd.NA
     df["fvg_bottom"] = pd.NA
     df["fvg_gap_pct"] = 0.0
+    
+    for idx in range(2, len(df)):
+        high_two_bars_back = float(df.iloc[idx - 2]["High"])
+        low_two_bars_back = float(df.iloc[idx - 2]["Low"])
 
 def find_recent_fvg_context():
     pass
