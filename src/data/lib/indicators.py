@@ -75,3 +75,7 @@ def passes_screen(latest_row: pd.Series, criteria: dict) -> bool:
     rsi_ok = criteria["rsi_min"] <= float(latest_row["RSI14"] <= criteria["rsi_max"])
     volume_ok = float(latest_row["RelVolume"]) >= criteria["min_rel_volume"]
     high_ok = float(latest_row["PctBelow52WHigh"]) <= criteria["max_pct_from_52w_high"]
+    
+    sma20_ok = True
+    if criteria["price_above_sma20"]:
+        sma20_ok = close_price
