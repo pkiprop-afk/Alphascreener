@@ -84,4 +84,4 @@ def passes_screen(latest_row: pd.Series, criteria: dict) -> bool:
     if criteria["price_above_sma50"]:
         sma50_ok = close_price >= float(latest_row["SMA50"])
     
-    return all([])
+    return all([price_ok, rsi_ok, volume_ok, high_ok, sma20_ok, sma50_ok])
