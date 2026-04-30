@@ -7,6 +7,8 @@ def calculate_rsi(close_series: pd.Series, window: int = 14) -> pd.Series:
     
     average_gain = gains.rolling(window=window, min_periods=window).mean()
     average_loss = losses.rolling(window=window, min_periods=window).mean()
+    
+    rs = average_gain / average_loss.replace
 
 def add_indicators():
     pass
