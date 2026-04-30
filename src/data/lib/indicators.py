@@ -66,7 +66,7 @@ def build_strategy_from_inputs(
         "price_above_sma50": bool(price_above_sma50),
         "max_pct_from_52w_high": int(max_pct_from_52w_high),
         "lookback_period": str(lookback_period),
-        "universe_size": int(universe_size)
+        "universe_size": int(universe_size),
         
     }
 
