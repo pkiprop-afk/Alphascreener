@@ -22,7 +22,7 @@ def detect_swings(price_df: pd.DataFrame, swing_window: int = 3) -> pd.DataFrame
     
     return df
 
-def add_previous_swing_levels():
+def add_previous_swing_levels(price_df: pd.DataFrame) -> pd.DataFrame:
     pass
 
 def detect_structure_shift():
