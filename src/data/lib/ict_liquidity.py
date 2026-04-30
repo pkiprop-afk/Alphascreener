@@ -35,5 +35,8 @@ def add_liquidity_context(price_df: pd.DataFrame, liquidity_lookback: int = 40) 
         
     return df
 
-def summarize_liquidity():
-    pass 
+def summarize_liquidity(price_df: pd.DataFrame, end_index: int) -> dict:
+    row = price_df.iloc[end_index]
+    return {
+        
+    }
