@@ -91,8 +91,7 @@ def summarize_backtest(trades: list[dict]) -> dict:
         "win_rate": round(win_rate, 2),
         "average_r": round(average_r, 2),
         "total_r": round(total_r, 2),
-        "profit_fator": round(profit_factor, 2)
-        
+        "profit_fator": round(profit_factor, 2) if math.isfinite(profit_factor) else "Infinity",
     }
 
 def run_backtest_from_signals():
