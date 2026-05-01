@@ -24,6 +24,7 @@ def resolve_trade(price_df: pd.DataFrame, trade: dict, max_holding_bars: int) ->
     
     exit_index = final_index
     exit_price = float(price_df.iloc[final_index]["Close"])
+    outcome = "time_exit"
     
     
 
