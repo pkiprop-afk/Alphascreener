@@ -26,7 +26,37 @@ def resolve_trade(price_df: pd.DataFrame, trade: dict, max_holding_bars: int) ->
     exit_price = float(price_df.iloc[final_index]["Close"])
     outcome = "time_exit"
     
+    for idx in range(entry_index + 1, final_index + 1):
+        row = price_df.iloc[idx]
+        high_price = float(row["High"])
+        low_price = float(row["Low"])
+        
+        stop_hit = (side == "long" and low_price <= stop_price) or (side == "short" and high_price >= stop_price)
+        target_hit = (side == "long" and high_price >= target_price) or (side == "short" and low_price <= target_price)
+        
+        if stop_hit:
+            exit_index = idx
+            exit_price = stop_price
+            outcome = "stop"
+            break 
+        
+        if target_hit:
+            exit_index = idx
+            exit_price = target_price
+            outcome = "target"
+            break
     
+    pnl = (exit_price - entry_price) if side == "long" else (entry_price - exit_price)
+    pnl_r = pnl / risk
+    
+    return{
+        **trade,
+        "exit_index": exit_index,
+        "exit_time": str(price_df.index[exit_index]),
+        "exit_price": round(exit_price, 4),
+        "outcome":  outcome,
+        "pnl_r": round(pnl_r, 2),
+    }
 
 def summarize_backtest():
     pass
