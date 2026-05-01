@@ -9,8 +9,7 @@ def build_trade_record(entry_index: int, entry_time, side: str, entry_price: flo
         "side": side,
         "entry price": round(entry_price, 4),
         "stop-price": round(stop_price, 4),
-        "target_price"
-        
+        "target_price": round(target_price, 4),
     }
     
 
