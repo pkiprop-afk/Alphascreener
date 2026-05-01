@@ -94,5 +94,5 @@ def summarize_backtest(trades: list[dict]) -> dict:
         "profit_fator": round(profit_factor, 2) if math.isfinite(profit_factor) else "Infinity",
     }
 
-def run_backtest_from_signals():
+def run_backtest_from_signals(price_df: pd.DataFrame, signal_df: pd.DataFrame, risk_reward: float = 2.0, max_holding_bars: int = 12) -> tuple[pd.DataFrame, dict] :
     pass
