@@ -102,4 +102,4 @@ def run_backtest_from_signals(price_df: pd.DataFrame, signal_df: pd.DataFrame, r
         if not bool(row.get("setup_valid", False)):
             continue
     
-        side = row.get("trade_side",)
+        side = row.get("trade_side", "neutral")
