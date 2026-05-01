@@ -106,3 +106,4 @@ def run_backtest_from_signals(price_df: pd.DataFrame, signal_df: pd.DataFrame, r
         if side not in ["long", "short"]:
             continue
         
+        entry_price = float(signal_)
