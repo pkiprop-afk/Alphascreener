@@ -107,4 +107,4 @@ def run_backtest_from_signals(price_df: pd.DataFrame, signal_df: pd.DataFrame, r
             continue
         
         entry_price = float(signal_df.iloc[idx + 1]["Open"])
-        is_long = side == "long"
+        is_long = side == "long" # -->
