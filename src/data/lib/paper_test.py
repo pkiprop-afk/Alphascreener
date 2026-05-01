@@ -11,7 +11,6 @@ def build_trade_record(entry_index: int, entry_time, side: str, entry_price: flo
         "stop-price": round(stop_price, 4),
         "target_price": round(target_price, 4),
     }
-    
 
 def resolve_trade():
     pass
