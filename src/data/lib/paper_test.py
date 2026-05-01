@@ -12,8 +12,9 @@ def build_trade_record(entry_index: int, entry_time, side: str, entry_price: flo
         "target_price": round(target_price, 4),
     }
 
-def resolve_trade():
-    pass
+def resolve_trade(price_df: pd.DataFrame, trade: dict, max_holding_bars: int) -> dict:
+    
+    ass
 
 def summarize_backtest():
     pass
