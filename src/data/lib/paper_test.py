@@ -4,7 +4,13 @@ import pandas as pd
 
 def build_trade_record(entry_index: int, entry_time, side: str, entry_price: float, stop_price: float, target_price: float) -> dict:
     return{
-        "entry_time"
+        "entry_index": entry_index,
+        "entry_time": str(entry_time),
+        "side": side,
+        "entry price": round(entry_price, 4),
+        "stop-price": round(stop_price, 4),
+        "target_price"
+        
     }
     
 
