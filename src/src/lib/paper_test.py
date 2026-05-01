@@ -75,6 +75,8 @@ def summarize_backtest(trades: list[dict]) -> dict:
     gross_profit = sum(wins)
     gross_loss = abs(sum(pnl for pnl in pnl_values if pnl < 0))
     total_r = sum(pnl_values)
+    
+    win_rate = (len(wins) / total_trades) * 100
 
 def run_backtest_from_signals():
     pass
