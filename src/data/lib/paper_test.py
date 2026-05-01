@@ -22,6 +22,8 @@ def resolve_trade(price_df: pd.DataFrame, trade: dict, max_holding_bars: int) ->
     risk = max(abs(entry_price - stop_price), 1e-9)
     final_index = min(len(price_df) - 1, entry_index + max_holding_bars)
     
+    exit_index = final_index
+    exit_price = float()
 
 def summarize_backtest():
     pass
