@@ -103,3 +103,6 @@ def run_backtest_from_signals(price_df: pd.DataFrame, signal_df: pd.DataFrame, r
             continue
     
         side = row.get("trade_side", "neutral")
+        if side not in ["long", "short"]:
+            continue
+        
