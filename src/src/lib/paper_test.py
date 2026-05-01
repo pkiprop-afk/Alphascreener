@@ -95,4 +95,11 @@ def summarize_backtest(trades: list[dict]) -> dict:
     }
 
 def run_backtest_from_signals(price_df: pd.DataFrame, signal_df: pd.DataFrame, risk_reward: float = 2.0, max_holding_bars: int = 12) -> tuple[pd.DataFrame, dict] :
-    pass
+    trades = []
+    
+    for idx in range(len(signal_df) - 1):
+        row = signal_df.iloc[idx]
+        if not bool(row.get("setup_valid", False)):
+            continue
+    
+        side = row.get("trade_side",)
