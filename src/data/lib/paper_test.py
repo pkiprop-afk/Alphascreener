@@ -19,7 +19,7 @@ def resolve_trade(price_df: pd.DataFrame, trade: dict, max_holding_bars: int) ->
     target_price = float(trade["target_price"])
     entry_price = float(trade["entry_price"])    
     
-    risk = max
+    risk = max(abs(entry_price - stop_price), 1e-9)
 
 def summarize_backtest():
     pass
