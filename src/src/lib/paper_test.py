@@ -109,3 +109,8 @@ def run_backtest_from_signals(price_df: pd.DataFrame, signal_df: pd.DataFrame, r
         entry_price = float(signal_df.iloc[idx + 1]["Open"])
         is_long = side == "long" # --> eliminated the DRY rule
         
+        swing_level = row.get("previous_swing_lows") if is_long else row.get("previous_swing_highs")
+        fallback_level = row["low"] if is_long else row["High"]
+        stop_price = float(swing_level) if pd.notna(swing_level) else float(fallback_level)
+        
+        risk_direction = 1 if is_long else -1 
