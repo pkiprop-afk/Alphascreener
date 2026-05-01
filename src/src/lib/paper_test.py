@@ -78,6 +78,22 @@ def summarize_backtest(trades: list[dict]) -> dict:
     
     win_rate = (len(wins) / total_trades) * 100
     average_r = total_r / total_trades
+    
+    if gross_loss > 0:
+        profit_factor = gross_profit / gross_loss
+    elif gross_profit > 0:
+        profit_factor = math.inf
+    else:
+        profit_factor = 0.0
+    
+    return{
+        "total_trades": total_trades,
+        "win_rate": round(win_rate, 2),
+        "average_r": round(average_r, 2),
+        "total_r": round(total_r, 2),
+        "profit_fator": round(profit_factor, 2)
+        
+    }
 
 def run_backtest_from_signals():
     pass
