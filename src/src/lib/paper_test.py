@@ -58,8 +58,15 @@ def resolve_trade(price_df: pd.DataFrame, trade: dict, max_holding_bars: int) ->
         "pnl_r": round(pnl_r, 2),
     }
 
-def summarize_backtest():
-    pass
+def summarize_backtest(trades: list[dict]) -> dict:
+    if not trades:
+        return{
+            "total_trades": 0,
+            "win_rate": 0.0,
+            "average_r": 0.0,
+            "total_r": 0.0,
+            "profit_factor": 0.0,
+        }
 
 def run_backtest_from_signals():
     pass
