@@ -77,6 +77,7 @@ def summarize_backtest(trades: list[dict]) -> dict:
     total_r = sum(pnl_values)
     
     win_rate = (len(wins) / total_trades) * 100
+    average_r = total_r / total_trades
 
 def run_backtest_from_signals():
     pass
