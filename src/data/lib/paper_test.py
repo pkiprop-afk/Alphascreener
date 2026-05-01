@@ -13,8 +13,11 @@ def build_trade_record(entry_index: int, entry_time, side: str, entry_price: flo
     }
 
 def resolve_trade(price_df: pd.DataFrame, trade: dict, max_holding_bars: int) -> dict:
-    
-    ass
+    entry_index = trade["entry_index"]
+    side = trade["side"]
+    stop_price = float(trade["stop_price"])
+    target_price = float(trade["target_price"])
+    entry_price = float(trade["entry_price"])    
 
 def summarize_backtest():
     pass
