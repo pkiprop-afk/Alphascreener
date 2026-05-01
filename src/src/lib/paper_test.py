@@ -67,6 +67,9 @@ def summarize_backtest(trades: list[dict]) -> dict:
             "total_r": 0.0,
             "profit_factor": 0.0,
         }
+    
+    pnl_values = [float(item["pnl_r"]) for item in trades]
+    total_trades = len(pnl_values)
 
 def run_backtest_from_signals():
     pass
