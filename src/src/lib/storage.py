@@ -67,6 +67,11 @@ def load_ticker_universe(csv_path: str) -> list[str]:
         return []
     
     # Parses the CSV and extract a cleaned ticker symbols from the 'ticker' column
+    tickers = []
+    with open(csv_path, "r", encoding="utf-8") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            ticker
 
 def list_strategy_names():
     pass
