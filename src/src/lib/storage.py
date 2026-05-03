@@ -143,7 +143,8 @@ def add_to_watchlist(file_path: str, ticker: str, notes: str, strategy_name: str
             }
         )
     
+    # Saves the updated watchlist
+    write_json_file(file_path, watchlist)    
 
-
-def append_backtest_result():
+def append_backtest_result(file_path: str,):
     pass
