@@ -92,7 +92,17 @@ def save_or_update_strategy(file_path: str, strategy_payload: dict) -> None:
     strategy_name = strategy_payload.get("name", "Unnamed Strategy").strip()
     now = timestamp_now
     
-    # We find the index
+    # We find the index of an existing strategy if it exists
+    existing_index = -1
+    for i, item in enumerate(strategies):
+        if item.get("name") == strategy_name:
+            existing_index = i
+            break
+    
+    if existing_index != -1:
+        # If found, update the existing strategy
+        strategies[existing_index].update(strategy_payload)
+        strategies[existing_index]["updated_at"] = now
     
     # If the strategy exists, update its field and save
     for item in strategies:
