@@ -81,6 +81,11 @@ def list_strategy_names(file_path: str) -> list[str]:
     strategies = load_json_file(file_path, default=[])
     return [item.get("name","Unnamed Strategy") for item in strategies]
 
+def get_strategy_by_name(file_path: str, strategy_name: str) -> dict | None:
+    """ Load strategies and find the first one """
+    strategies = load_json_file(file_path, default=[])
+    return [item.get("name", "Unnamed Strategy") for item in strategies]
+
 def save_or_update_strategy():
     pass
 
