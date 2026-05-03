@@ -87,8 +87,18 @@ def get_strategy_by_name(file_path: str, strategy_name: str) -> dict | None:
     return [item.get("name", "Unnamed Strategy") for item in strategies]
 
 def save_or_update_strategy(file_path: str, strategy_payload: dict) -> None:
-    """ Loads existing strategy """
-    pass
+    # loads existing strategies and prepares metadata
+    strategies = load_json_file(file_path, default=[])
+    strategy_name = strategy_payload.get("name", "Unnamed Strategy").strip()
+    now = timestamp_now
+    
+    # If the strategy exists, update its field and save
+    for item in strategies:
+        if item.get("name") == strategy_name:
+            item.update(strategy_payload)
+            item["update_at"] = now
+            write_json_file(file_path, strategies)
+            return
 
 def delete_strategy():
     pass
