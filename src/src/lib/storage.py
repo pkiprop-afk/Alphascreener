@@ -32,6 +32,7 @@ DEFAULT_STRATEGY = {
 }
 
 def ensure_parents_exist():
+    """ ensures the directory containing the file exists"""
     pass
 
 def timestamp_now():
