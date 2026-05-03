@@ -71,7 +71,9 @@ def load_ticker_universe(csv_path: str) -> list[str]:
     with open(csv_path, "r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
         for row in reader:
-            ticker
+            ticker = (row.get("ticker") or"").strip().upper()
+            if ticker:
+                tickers
 
 def list_strategy_names():
     pass
