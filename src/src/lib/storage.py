@@ -115,8 +115,9 @@ def save_or_update_strategy(file_path: str, strategy_payload: dict) -> None:
         }
         strategies.append(new_strategy)
 
-def delete_strategy(file_path: str, ):
-    pass
+def delete_strategy(file_path: str, strategy_name: str) -> None:
+    # Load strategies excluding the one to be deleted
+    
 
 def add_to_watchlist():
     pass
