@@ -99,6 +99,15 @@ def save_or_update_strategy(file_path: str, strategy_payload: dict) -> None:
             item["update_at"] = now
             write_json_file(file_path, strategies)
             return
+    
+    # Otherwise, create a new strategy merged with defaults and append it to the list
+    new_strategy = {
+        **DEFAULT_STRATEGY,
+        **strategy_payload,
+        "name": strategy_name,
+        "created_at": now,
+        "updated_at": now,
+    }
 
 def delete_strategy():
     pass
