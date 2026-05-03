@@ -57,7 +57,9 @@ def load_json_file(file_path: str, default: Any):
 
 def write_json_file(file_path: str, data: Any) -> None:
     """ ensures the directory exists and writes the data to the file as formatted JSON"""
-    
+    ensure_parents_exist(file_path)
+    with open(file_path, "w", encoding="utf-8") as file:
+        json.dump(data, file, indent=2)
 
 def load_ticker_universe():
     pass
