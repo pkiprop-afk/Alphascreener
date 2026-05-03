@@ -4,9 +4,33 @@ import os
 from datetime import datetime
 from typing import Any
 
-DEFAULT_STRATEGY = [
-    
-]
+DEFAULT_STRATEGY = {
+    "name": "ICT Reversal Starter",
+    "market": "futures",
+    "timeframe": "1d",
+    "entry_model":{
+        "require_structure_shift": True,
+        "require_cisd": True,
+        "require_fvg": True,
+        "require_external_liquidity_sweep": True,
+        "require_internal_liquidity_touch": False,
+        "candle_pattern": "any",
+    },
+    "risk_model":{
+        "stop_type": "swing",
+        "target_type": "risk_reward",
+        "risk_reward": 2.0,
+        "max_holding_bars": 12,
+    },
+    "filters": {
+        "swing_window": 3,
+        "liquidity_lookback": 40,
+        "fvg_min_pct": 0.001,
+        "min_displacement_pct": 0.002,
+        "max_bars_after_sweep": 6,
+    },
+}
+
 def ensure_parents_exist():
     pass
 
