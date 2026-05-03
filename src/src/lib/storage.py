@@ -146,5 +146,9 @@ def add_to_watchlist(file_path: str, ticker: str, notes: str, strategy_name: str
     # Saves the updated watchlist
     write_json_file(file_path, watchlist)    
 
-def append_backtest_result(file_path: str,):
-    pass
+def append_backtest_result(file_path: str, result_payload: dict) -> None:
+    # Loads existing features, add a timestamp to the new result, and save
+    results = load_json_file(file_path, default=[])
+    enriched = {**result_payload, "saved_at": timestamp_now()}
+    results.append(enriched)
+    write_json_file(file_path, results)
