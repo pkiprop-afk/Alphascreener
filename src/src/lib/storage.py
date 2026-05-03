@@ -76,8 +76,9 @@ def load_ticker_universe(csv_path: str) -> list[str]:
                 tickers.append(ticker)
     return tickers
 
-def list_strategy_names():
-    pass
+def list_strategy_names(file_path: str) -> list[str]:
+    """ Loads the strategy and returns a list of their names"""
+    
 
 def save_or_update_strategy():
     pass
