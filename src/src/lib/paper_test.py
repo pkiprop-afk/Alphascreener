@@ -116,3 +116,5 @@ def run_backtest_from_signals(price_df: pd.DataFrame, signal_df: pd.DataFrame, r
         risk_direction = 1 if is_long else -1 
         risk = max(risk_direction * (entry_price - stop_price), 0.01)
         target_price = entry_price + (risk * risk_reward *risk_direction)
+        
+        trader
