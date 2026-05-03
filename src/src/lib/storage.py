@@ -66,7 +66,7 @@ def load_ticker_universe(csv_path: str) -> list[str]:
     if not os.path.exists(csv_path):
         return []
     
-    # Ps
+    # Parses the CSV and extract a cleaned ticker symbols from the 'ticker' column
 
 def list_strategy_names():
     pass
