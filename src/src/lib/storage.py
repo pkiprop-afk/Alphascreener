@@ -103,23 +103,17 @@ def save_or_update_strategy(file_path: str, strategy_payload: dict) -> None:
         # If found, update the existing strategy
         strategies[existing_index].update(strategy_payload)
         strategies[existing_index]["updated_at"] = now
-    
-    # If the strategy exists, update its field and save
-    for item in strategies:
-        if item.get("name") == strategy_name:
-            item.update(strategy_payload)
-            item["update_at"] = now
-            write_json_file(file_path, strategies)
-            return
-    
+        
+    else:
     # Otherwise, create a new strategy merged with defaults and append it to the list
-    new_strategy = {
-        **DEFAULT_STRATEGY,
-        **strategy_payload,
-        "name": strategy_name,
-        "created_at": now,
-        "updated_at": now,
-    }
+        new_strategy = {
+            **DEFAULT_STRATEGY,
+            **strategy_payload,
+            "name": strategy_name,
+            "created_at": now,
+            "updated_at": now,
+        }
+        strategies.append(new_strategy)
 
 def delete_strategy():
     pass
