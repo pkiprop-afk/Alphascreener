@@ -54,7 +54,6 @@ def load_json_file(file_path: str, default: Any):
             return default
 
 
-
 def write_json_file(file_path: str, data: Any) -> None:
     """ ensures the directory exists and writes the data to the file as formatted JSON"""
     ensure_parents_exist(file_path)
