@@ -73,7 +73,8 @@ def load_ticker_universe(csv_path: str) -> list[str]:
         for row in reader:
             ticker = (row.get("ticker") or"").strip().upper()
             if ticker:
-                tickers
+                tickers.append(ticker)
+    return tickers
 
 def list_strategy_names():
     pass
