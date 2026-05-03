@@ -31,11 +31,11 @@ DEFAULT_STRATEGY = {
     },
 }
 
-def ensure_parents_exist():
+def ensure_parents_exist(file_path = str) -> None:
     """ ensures the directory containing the file exists"""
-    pass
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
-def timestamp_now():
+def timestamp_now() -> str:
     pass
 
 def load_json_file():
