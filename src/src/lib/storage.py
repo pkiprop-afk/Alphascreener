@@ -61,11 +61,12 @@ def write_json_file(file_path: str, data: Any) -> None:
         json.dump(data, file, indent=2)
 
 def load_ticker_universe(csv_path: str) -> list[str]:
-    # Return an empty list if the 
+    # Return an empty list if the CSV file does not exist
     ensure_parents_exist(csv_path)
     if not os.path.exists(csv_path):
         return []
     
+    # Ps
 
 def list_strategy_names():
     pass
