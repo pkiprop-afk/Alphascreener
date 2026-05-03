@@ -117,4 +117,5 @@ def run_backtest_from_signals(price_df: pd.DataFrame, signal_df: pd.DataFrame, r
         risk = max(risk_direction * (entry_price - stop_price), 0.01)
         target_price = entry_price + (risk * risk_reward *risk_direction)
         
-        trader
+        trade = build_trade_record(idx + 1, signal_df.index[idx + 1], side, entry_price, stop_price, target_price)
+        resolved = resolve_trade(signal )
