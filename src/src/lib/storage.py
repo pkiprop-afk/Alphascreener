@@ -36,7 +36,7 @@ def ensure_parents_exist(file_path = str) -> None:
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
 def timestamp_now() -> str:
-    pass
+    return datetime.now().isoformat(timespec="seconds")
 
 def load_json_file():
     pass
