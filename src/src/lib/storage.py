@@ -40,11 +40,14 @@ def timestamp_now() -> str:
     return datetime.now().isoformat(timespec="seconds")
 
 def load_json_file(file_path: str, default: Any):
+    """ Ensures the directory exists and initialize the file with default data if it's missing"""
     ensure_parents_exist(file_path)
     if not os.path.exists(file_path):
         with open(file_path, "w", encoding="utf-8") as file:
             json.dump(default, file, indent=2)
         return default
+    
+    
 
 def write_json_file():
     pass
