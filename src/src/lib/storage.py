@@ -118,7 +118,8 @@ def save_or_update_strategy(file_path: str, strategy_payload: dict) -> None:
 def delete_strategy(file_path: str, strategy_name: str) -> None:
     # Load strategies excluding the one to be deleted
     strategies = load_json_file(file_path, default=[])
-    filtered = [item for item in strategies if item.get("name")]
+    filtered = [item for item in strategies if item.get("name") != strategy_name]
+    write_json_file(file_path, filtered)
 
 def add_to_watchlist():
     pass
