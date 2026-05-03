@@ -92,6 +92,8 @@ def save_or_update_strategy(file_path: str, strategy_payload: dict) -> None:
     strategy_name = strategy_payload.get("name", "Unnamed Strategy").strip()
     now = timestamp_now
     
+    # We find the index
+    
     # If the strategy exists, update its field and save
     for item in strategies:
         if item.get("name") == strategy_name:
