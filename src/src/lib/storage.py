@@ -78,7 +78,8 @@ def load_ticker_universe(csv_path: str) -> list[str]:
 
 def list_strategy_names(file_path: str) -> list[str]:
     """ Loads the strategy and returns a list of their names"""
-    
+    strategies = load_json_file(file_path, default=[])
+    return [item.get("name","Unnamed Strategy") for item in strategies]
 
 def save_or_update_strategy():
     pass
