@@ -121,8 +121,12 @@ def delete_strategy(file_path: str, strategy_name: str) -> None:
     filtered = [item for item in strategies if item.get("name") != strategy_name]
     write_json_file(file_path, filtered)
 
-def add_to_watchlist():
-    pass
+def add_to_watchlist(file_path: str, ticker: str, notes: str, strategy_name: str = "" ) -> None:
+    # Loads the watchlist and prepares the timestamp
+    watchlist = load_json_file(file_path, default=[])
+    now = timestamp_now()
+    
+
 
 def append_backtest_result():
     pass
