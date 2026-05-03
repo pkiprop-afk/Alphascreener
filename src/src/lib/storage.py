@@ -60,8 +60,12 @@ def write_json_file(file_path: str, data: Any) -> None:
     with open(file_path, "w", encoding="utf-8") as file:
         json.dump(data, file, indent=2)
 
-def load_ticker_universe():
-    pass
+def load_ticker_universe(csv_path: str) -> list[str]:
+    # Return an empty list if the 
+    ensure_parents_exist(csv_path)
+    if not os.path.exists(csv_path):
+        return []
+    
 
 def list_strategy_names():
     pass
