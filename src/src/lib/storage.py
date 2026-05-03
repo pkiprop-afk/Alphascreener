@@ -47,7 +47,13 @@ def load_json_file(file_path: str, default: Any):
             json.dump(default, file, indent=2)
         return default
     
-    
+    with open(file_path, "r", encoding="utf-8") as file:
+        try:
+            return json.load(file)
+        except json.JSONDecodeError:
+            return default
+
+
 
 def write_json_file():
     pass
