@@ -126,6 +126,8 @@ def add_to_watchlist(file_path: str, ticker: str, notes: str, strategy_name: str
     watchlist = load_json_file(file_path, default=[])
     now = timestamp_now()
     
+    # Updates the entry if the ticker exists, otherwise append a new entry
+    
 
 
 def append_backtest_result():
