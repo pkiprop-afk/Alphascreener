@@ -39,7 +39,7 @@ def timestamp_now() -> str:
     "Returns the current time as an ISO formatted string"
     return datetime.now().isoformat(timespec="seconds")
 
-def load_json_file():
+def load_json_file(file_path: str, default: Any):
     pass
 
 def write_json_file():
