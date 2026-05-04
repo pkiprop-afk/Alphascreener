@@ -12,7 +12,10 @@ INTERVAL_PERIOD_MAP = {
     "1h": "180d",
 }
 
-INTERVAL_
+INTERVAL_TRADINGVIEW_MAP = {
+    "1d": "D",
+    "1h": "60",
+}
 
 def build_summary_row():
     pass
