@@ -17,6 +17,8 @@ INTERVAL_TRADINGVIEW_MAP = {
     "1h": "60",
 }
 
+@st.cache
+
 def build_summary_row():
     pass
 
