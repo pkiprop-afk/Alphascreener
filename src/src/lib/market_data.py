@@ -12,6 +12,8 @@ INTERVAL_PERIOD_MAP = {
     "1h": "180d",
 }
 
+INTERVAL_
+
 def build_summary_row():
     pass
 
