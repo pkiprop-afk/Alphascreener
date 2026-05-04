@@ -17,8 +17,14 @@ INTERVAL_TRADINGVIEW_MAP = {
     "1h": "60",
 }
 
-@st.cache
-
+@st.cache_data(show_spinner=False, ttl=1800)
+def fetch_history_for_sticker(ticker: str, interval: str = "1d") -> pd.DataFrame:
+    # Determine the lookback period and downloads the raw data from yfinance
+    period = INTERVAL_PERIOD_MAP.get(interval, "2y")
+    raw_df = yf.download(ticker, period=period, interval=interval, auto_adjust=False, progress=False)
+    if raw_df.empty:
+        return pd.DataFrame
+    
 def build_summary_row():
     pass
 
