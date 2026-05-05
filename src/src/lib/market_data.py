@@ -75,9 +75,19 @@ def have_with_ict_signal(price_df: pd.DataFrame, strategy: dict) -> pd.DataFrame
     return df
     
 def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: dict) -> dict:
+    # Extract the specific row and relevant strategy settings
     row = signal_df.iloc[index_position]
     entry_model = strategy.get("entry_model", {})
     filters = strategy.get("filters", {})
+    max_bars_after_sweep = int(filters.get("max_bars_after_sweep", 6))
+
+    bullish_shift = bool(row.get("bullish_structure_shift", False))
+    bearish_shift = bool(row.get("bearish_structure_shift", False))
+    bullish_cisd = bool(row.get("bullish_cisd", False))
+    bearish_cisd = bool(row.get("bearish_cisd", False))
+    has_bullish_fvg = bool(row.get("bullish_fvg", False))
+    has_bearish_fvg = bool(row.get("bearish_fvg", False))
+
     
 def build_summary_row():
     pass
