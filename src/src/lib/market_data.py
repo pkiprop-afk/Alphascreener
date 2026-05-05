@@ -130,6 +130,13 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
             recent_fvg_context.get("latest_bearish_fvg")
     
         internal_ok = bool(liquidity_summary.get("touches_internal_liquidity", False)) or price_touches_fvg(row, candidate_fvg)
+    
+    pattern_required = entry_model.get("candle_pattern", "any")
+    pattern_ok = True
+    if pattern_required != "any":
+        pattern_ok = row.get("candle_pattern") == pattern_required
+    
+    setup_valid = all([trade_side != "neutral", structure_ok, cisd_ok, fvg_ok, external_ok, internal_ok, pattern_ok])
 def build_summary_row():
     pass
 
