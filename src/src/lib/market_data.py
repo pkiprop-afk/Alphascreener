@@ -56,6 +56,12 @@ def have_with_ict_signal(price_df: pd.DataFrame, strategy: dict) -> pd.DataFrame
     
     # Applies a series of ICT technical indicators to the price data
     df = detect_swings(price_df, swing_window=swing_window)
+    df = detect_structure_shift(df, min_displacement_pct=min_displacement_pct)
+    df = detect_external_liquidity_sweep(df)
+    df = detect_cisd(df)
+    df = detect_fvg_zones(df, min_gap_pct=fvg_min_pct)
+    df = add_liquidity_context(df, liquidity_lookback=liquidity_lookback)
+    return df
     
 def build_summary_row():
     pass
