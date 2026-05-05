@@ -19,6 +19,17 @@ INTERVAL_TRADINGVIEW_MAP = {
 
 @st.cache_data(show_spinner=False, ttl=1800)
 def fetch_history_for_sticker(ticker: str, interval: str = "1d") -> pd.DataFrame:
+    """ 
+    Fetch historical OHLCV price data for a ticker from Yahoo Finance over an interval-appropriate lookback. 
+    The function returns a cleaned DataFrame with a datetime index and only the core pricing and volume columns.
+
+    Args:
+        ticker: Symbol string to download historical data for.
+        interval: Bar interval supported by yfinance (for example, '1d' or '1h').
+
+    Returns:
+        A pandas DataFrame containing cleaned OHLCV data indexed by timestamp, or an empty DataFrame if no data is available.
+    """
     # Determine the lookback period and downloads the raw data from yfinance
     period = INTERVAL_PERIOD_MAP.get(interval, "2y")
     raw_df = yf.download(ticker, period=period, interval=interval, auto_adjust=False, progress=False)
