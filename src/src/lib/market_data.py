@@ -87,7 +87,10 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
     bearish_cisd = bool(row.get("bearish_cisd", False))
     has_bullish_fvg = bool(row.get("bullish_fvg", False))
     has_bearish_fvg = bool(row.get("bearish_fvg", False))
-
+    recent_fvg_context = find_recent_fvg_context(signal_df, index_position, lookback=max_bars_after_sweep)
+    liquidity_summary = summarize_liquidity(signal_df, index_position)
+    
+    trade_side = "neutral"
     
 def build_summary_row():
     pass
