@@ -98,8 +98,20 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
     
     structure_ok = True
     if entry_model.get("require_structure_shift", False):
-        
-        
+        structure_ok = bullish_shift or bearish_shift
+
+    cisd_ok = True
+    if entry_model.get("require_cisd", False):
+        cisd_ok = bullish_cisd or bearish_cisd
+
+    fvg_ok = True
+    if entry_model.get("require_fvg", False):
+        if trade_side == "long":
+            fvg_ok = has_bullish_fvg or recent_fvg_context.get("has_recent_bullish_fvg", False)
+        elif trade_side == "short":
+            fvg_ok = has_bearish_fvg or recent_fvg_context.get("has_recent_bearish_fvg", False)
+    else:
+        fvg_ok = False        
     
 def build_summary_row():
     pass
