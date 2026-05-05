@@ -89,13 +89,13 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
     has_bearish_fvg = bool(row.get("bearish_fvg", False))
     recent_fvg_context = find_recent_fvg_context(signal_df, index_position, lookback=max_bars_after_sweep)
     liquidity_summary = summarize_liquidity(signal_df, index_position)
-    
+
     trade_side = "neutral"
     if bullish_shift or bullish_cisd:
         trade_side = "long"
     elif bearish_shift or bearish_cisd:
         trade_side = "short"
-    
+
     structure_ok = True
     if entry_model.get("require_structure_shift", False):
         structure_ok = bullish_shift or bearish_shift
@@ -112,12 +112,12 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
             fvg_ok = has_bearish_fvg or recent_fvg_context.get("has_recent_bearish_fvg", False)
     else:
         fvg_ok = False
-    
+
     external_ok = True
     if entry_model.get("require_external_liquidity_sweep", False):
         if trade_side == "long":
             external_ok = bool(row.get("swept_external_low", False) or bool(row.get("touches_external_low", False)))
-        if trade_side == "short":
+        elif trade_side == "short":
             external_ok = bool(row.get("swept_external_high", False) or bool(row.get("touches_external_high", False)))
     
 def build_summary_row():
