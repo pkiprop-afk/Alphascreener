@@ -128,10 +128,8 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
             candidate_fvg = recent_fvg_context.get("latest_bullish_fvg")
         else:
             recent_fvg_context.get("latest_bearish_fvg")
-            
-
-        candidate_fvg = recent_fvg_context.get("latest_bullish_fvg")
     
+        internal_ok
 def build_summary_row():
     pass
 
