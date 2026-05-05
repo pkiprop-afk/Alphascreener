@@ -46,6 +46,14 @@ def fetch_history_for_sticker(ticker: str, interval: str = "1d") -> pd.DataFrame
     clean_df.index = pd.to_datetime(clean_df.index)
     return clean_df
     
+def have_with_ict_signal(price_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
+    # Extracts configuration parameters from the strategy filters
+    filters = strategy.get("filters", {})
+    swing_window = int(filters.get("swing_window", 3))
+    liquidity_lookback = int(filters.get("liquidity_lookback", 40))
+    fvg_min_pct = float(filters.get("fvg_min_pct", 0.001))
+    min_displacement_pct = float(filters.get("min_displacement_pct", 0.002))
+    
 def build_summary_row():
     pass
 
