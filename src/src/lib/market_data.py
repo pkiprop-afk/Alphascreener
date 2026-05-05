@@ -143,7 +143,10 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
         "structure_ok": structure_ok,
         "cisd_ok": cisd_ok,
         "fvg_ok": fvg_ok,
-        
+        "external_ok": external_ok,
+        "internal_ok": internal_ok,
+        "pattern_ok": pattern_ok,
+        "setup_valid": setup_valid,
     }
 def build_summary_row():
     pass
