@@ -29,7 +29,10 @@ def fetch_history_for_sticker(ticker: str, interval: str = "1d") -> pd.DataFrame
     if isinstance(raw_df.columns, pd.MultiIndex):
         raw_df.columns = raw_df.columns.get_level_values(0)
     
-    # Cleans the data and keeps required columns
+    # Cleans the data and keeps required columns and drops missing values
+    required_cols = ["Open", "High", "Low", "Close", "Volume"]
+    clean_df = raw_df[required_cols].dropna().copy()
+    
     
 def build_summary_row():
     pass
