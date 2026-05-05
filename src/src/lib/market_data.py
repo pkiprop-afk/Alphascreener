@@ -129,7 +129,7 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
         else:
             recent_fvg_context.get("latest_bearish_fvg")
     
-        internal_ok
+        internal_ok = bool(liquidity_summary.get("touches_internal_liquidity", False)) or price_touches_fvg(row, candidate_fvg)
 def build_summary_row():
     pass
 
