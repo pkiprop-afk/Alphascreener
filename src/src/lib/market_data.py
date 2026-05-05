@@ -153,6 +153,8 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
     records = []
     for idx in range(len(signal_df)):
         evaluation = evaluate_bar_setup(signal_df, idx, strategy)
+        row = signal_df.iloc[idx]
+        
     
 
 def build_summary_row():
