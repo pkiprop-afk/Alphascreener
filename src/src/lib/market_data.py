@@ -47,6 +47,17 @@ def fetch_history_for_sticker(ticker: str, interval: str = "1d") -> pd.DataFrame
     return clean_df
     
 def have_with_ict_signal(price_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
+    """ 
+    Apply a configured set of ICT-based technical signals to a historical price DataFrame.
+    The function returns an enriched DataFrame containing swing structure, liquidity, displacement, and fair value gap annotations.
+
+    Args:
+        price_df: Historical OHLCV price data to which ICT indicators and context will be applied.
+        strategy: Strategy configuration dictionary providing filter parameters such as swing window and liquidity lookback.
+
+    Returns:
+        A pandas DataFrame with additional columns representing ICT structure, liquidity sweeps, CISD, FVGs, and liquidity context.
+    """
     # Extracts configuration parameters from the strategy filters
     filters = strategy.get("filters", {})
     swing_window = int(filters.get("swing_window", 3))
