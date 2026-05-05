@@ -110,8 +110,8 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
             fvg_ok = has_bullish_fvg or recent_fvg_context.get("has_recent_bullish_fvg", False)
         elif trade_side == "short":
             fvg_ok = has_bearish_fvg or recent_fvg_context.get("has_recent_bearish_fvg", False)
-    else:
-        fvg_ok = False
+        else:
+            fvg_ok = False
 
     external_ok = True
     if entry_model.get("require_external_liquidity_sweep", False):
@@ -119,6 +119,8 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
             external_ok = bool(row.get("swept_external_low", False) or bool(row.get("touches_external_low", False)))
         elif trade_side == "short":
             external_ok = bool(row.get("swept_external_high", False) or bool(row.get("touches_external_high", False)))
+        else:
+            external_ok = False
     
 def build_summary_row():
     pass
