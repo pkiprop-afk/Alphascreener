@@ -74,6 +74,10 @@ def have_with_ict_signal(price_df: pd.DataFrame, strategy: dict) -> pd.DataFrame
     df = add_liquidity_context(df, liquidity_lookback=liquidity_lookback)
     return df
     
+def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: dict) -> dict:
+    row = signal_df.iloc[index_position]
+    entry_model = strategy.get("entry_model", {})
+    filters = strategy.get("filters", {})
     
 def build_summary_row():
     pass
