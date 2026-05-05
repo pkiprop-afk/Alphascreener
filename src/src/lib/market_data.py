@@ -74,6 +74,7 @@ def have_with_ict_signal(price_df: pd.DataFrame, strategy: dict) -> pd.DataFrame
     df = add_liquidity_context(df, liquidity_lookback=liquidity_lookback)
     return df
     
+    
 def build_summary_row():
     pass
 
