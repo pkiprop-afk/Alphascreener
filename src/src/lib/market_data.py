@@ -139,7 +139,11 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
     setup_valid = all([trade_side != "neutral", structure_ok, cisd_ok, fvg_ok, external_ok, internal_ok, pattern_ok])
     
     return {
-        "trade_side"
+        "trade_side": trade_side,
+        "structure_ok": structure_ok,
+        "cisd_ok": cisd_ok,
+        "fvg_ok": fvg_ok,
+        
     }
 def build_summary_row():
     pass
