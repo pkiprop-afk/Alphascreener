@@ -122,6 +122,10 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
         else:
             external_ok = False
     
+    internal_ok = True
+    if entry_model.get("require_internal_liquidity_touch", False):
+        candidate_fvg = recent_fvg_context.get("latest_bullish_fvg")
+    
 def build_summary_row():
     pass
 
