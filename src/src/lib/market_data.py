@@ -91,6 +91,10 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
     liquidity_summary = summarize_liquidity(signal_df, index_position)
     
     trade_side = "neutral"
+    if bullish_shift or bullish_cisd:
+        trade_side = "long"
+    elif bearish_shift or bearish_cisd:
+        trade_side = "short"
     
 def build_summary_row():
     pass
