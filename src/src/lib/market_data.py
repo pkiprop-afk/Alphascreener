@@ -125,7 +125,7 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
     internal_ok = True
     if entry_model.get("require_internal_liquidity_touch", False):
         if trade_side == "long":
-            internal_ok = liquidity_summary.get("touches_internal_liquidity", False)
+            candidate_fvg = recent_fvg_context.get("latest_bullish_fvg")
         else:
             recent_fvg_context.get("latest_bearish_fvg")
             
