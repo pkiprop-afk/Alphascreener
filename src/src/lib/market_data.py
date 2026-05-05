@@ -149,7 +149,9 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
         "setup_valid": setup_valid,
     }
 
-def func():
+def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
+    records - []
+    
     pass
 
 def build_summary_row():
