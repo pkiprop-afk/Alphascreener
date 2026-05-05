@@ -32,7 +32,8 @@ def fetch_history_for_sticker(ticker: str, interval: str = "1d") -> pd.DataFrame
     # Cleans the data and keeps required columns and drops missing values
     required_cols = ["Open", "High", "Low", "Close", "Volume"]
     clean_df = raw_df[required_cols].dropna().copy()
-    
+    clean_df.index = pd.to_datetime(clean_df.index)
+    return clean_df
     
 def build_summary_row():
     pass
