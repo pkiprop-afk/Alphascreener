@@ -137,6 +137,10 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
         pattern_ok = row.get("candle_pattern") == pattern_required
     
     setup_valid = all([trade_side != "neutral", structure_ok, cisd_ok, fvg_ok, external_ok, internal_ok, pattern_ok])
+    
+    return {
+        "trade_side"
+    }
 def build_summary_row():
     pass
 
