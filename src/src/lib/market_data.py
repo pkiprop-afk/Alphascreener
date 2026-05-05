@@ -54,6 +54,9 @@ def have_with_ict_signal(price_df: pd.DataFrame, strategy: dict) -> pd.DataFrame
     fvg_min_pct = float(filters.get("fvg_min_pct", 0.001))
     min_displacement_pct = float(filters.get("min_displacement_pct", 0.002))
     
+    # Applies a series of ICT technical indicators to the price data
+    df = detect_swings(price_df, swing_window=swing_window)
+    
 def build_summary_row():
     pass
 
