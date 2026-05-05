@@ -23,7 +23,10 @@ def fetch_history_for_sticker(ticker: str, interval: str = "1d") -> pd.DataFrame
     period = INTERVAL_PERIOD_MAP.get(interval, "2y")
     raw_df = yf.download(ticker, period=period, interval=interval, auto_adjust=False, progress=False)
     if raw_df.empty:
-        return pd.DataFrame
+        return pd.DataFrame()
+    
+    # This flattens multi-index columns if it is necessary
+    
     
 def build_summary_row():
     pass
