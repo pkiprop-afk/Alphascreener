@@ -96,6 +96,11 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
     elif bearish_shift or bearish_cisd:
         trade_side = "short"
     
+    structure_ok = True
+    if entry_model.get("require_structure_shift", False):
+        
+        
+    
 def build_summary_row():
     pass
 
