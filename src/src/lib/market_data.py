@@ -150,9 +150,10 @@ def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: d
     }
 
 def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
-    records - []
+    records = []
+    for idx in range(len(signal_df)):
+        evaluation = evaluate_bar_setup(signal_df, idx, strategy)
     
-    pass
 
 def build_summary_row():
     pass
