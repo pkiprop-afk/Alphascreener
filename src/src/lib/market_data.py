@@ -26,7 +26,10 @@ def fetch_history_for_sticker(ticker: str, interval: str = "1d") -> pd.DataFrame
         return pd.DataFrame()
     
     # This flattens multi-index columns if it is necessary
+    if isinstance(raw_df.columns, pd.MultiIndex):
+        raw_df.columns = raw_df.columns.get_level_values(0)
     
+    # Cleans the data and keeps required columns
     
 def build_summary_row():
     pass
