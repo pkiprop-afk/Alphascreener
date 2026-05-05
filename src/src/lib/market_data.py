@@ -75,7 +75,6 @@ def have_with_ict_signal(price_df: pd.DataFrame, strategy: dict) -> pd.DataFrame
     return df
     
 def evaluate_bar_setup(signal_df: pd.DataFrame, index_position: int, strategy: dict) -> dict:
-    
     # Extract the specific row and relevant strategy settings
     row = signal_df.iloc[index_position]
     entry_model = strategy.get("entry_model", {})
