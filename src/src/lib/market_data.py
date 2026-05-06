@@ -193,7 +193,7 @@ def build_summary_latest_setup(ticker: str, signal_df: pd.DataFrame) -> dict:
         "Structure shift": bool(latest.get("bullish_structure_shift", False) or latest.get("bearish_structure_shift", False)),
         "CISD": bool(latest.get("bullish_cisd", False) or latest.get("bearish_cisd", False)),
         "FVG": bool(latest.get("bullish_fvg", False) or latest.get("bearish_fvg", False)),
-        
+        "External Sweep": bool(latest.get("swept_external_high", False) or latest.get("swept_external_low", False)),
     }
 
 def run_screen():
