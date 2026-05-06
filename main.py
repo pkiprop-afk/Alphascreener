@@ -57,3 +57,10 @@ def create_new_model() -> None:
 
 def reset_paper_test_on_ticker_change():
     pass
+
+def render_header_row():
+    pass
+
+def render_control_strip():
+    pass
+
