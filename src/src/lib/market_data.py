@@ -194,6 +194,7 @@ def build_summary_latest_setup(ticker: str, signal_df: pd.DataFrame) -> dict:
         "CISD": bool(latest.get("bullish_cisd", False) or latest.get("bearish_cisd", False)),
         "FVG": bool(latest.get("bullish_fvg", False) or latest.get("bearish_fvg", False)),
         "External Sweep": bool(latest.get("swept_external_high", False) or latest.get("swept_external_low", False)),
+        "Internal touch": bool(latest.get)
     }
 
 def run_screen():
