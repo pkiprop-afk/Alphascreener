@@ -30,3 +30,12 @@ DATA_DIR = os.path.join(APP_PATH, "data")
 STRATEGIES_PATH = os.path.join(DATA_DIR, "strategies.json")
 TICKERS_PATH = os.path.join(DATA_DIR, "tickers.csv")
 NEW_MODEL_OPTION = "+ Create New Model"
+
+@st.cache_data
+def load_sticker_universe() -> list[str]:
+    if not os.path.exists(TICKERS_PATH):
+        return []
+    ticker_df = pd.read_csv(TICKERS_PATH)
+    if "ticker" not in ticker_df.columns:
+        return []
+    return ticker_df["ticker"].dropna().astype(str).str.upper().tolist()
