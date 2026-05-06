@@ -42,3 +42,6 @@ def load_sticker_universe() -> list[str]:
 
 def load_strategy_library() -> list[dict]:
     return load_json_file(STRATEGIES_PATH, default=[DEFAULT_STRATEGY])
+
+def initialize_session_state() -> None:
+    pass
