@@ -40,5 +40,5 @@ def load_sticker_universe() -> list[str]:
         return []
     return ticker_df["ticker"].dropna().astype(str).str.upper().tolist()
 
-def load_strategy_library(): -> list[dict]:
+def load_strategy_library() -> list[dict]:
     return load_json_file(STRATEGIES_PATH, default=[DEFAULT_STRATEGY])
