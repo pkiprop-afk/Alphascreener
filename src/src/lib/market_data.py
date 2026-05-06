@@ -154,7 +154,17 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
     for idx in range(len(signal_df)):
         evaluation = evaluate_bar_setup(signal_df, idx, strategy)
         row = signal_df.iloc[idx]
-        
+        records.append(
+            {
+                **evaluation,
+                "timestamp": signal_df.index[idx],
+                "open": float(row["Open"]),
+                "High": float(row["High"]),
+                "Low": float(row["Low"]),
+                "Close": float(row["Close]"]),
+                "Volume": int(row["Volume"]),
+            }
+        )
     
 
 def build_summary_row():
