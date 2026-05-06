@@ -195,9 +195,9 @@ def build_summary_latest_setup(ticker: str, signal_df: pd.DataFrame) -> dict:
         "FVG": bool(latest.get("bullish_fvg", False) or latest.get("bearish_fvg", False)),
         "External Sweep": bool(latest.get("swept_external_high", False) or latest.get("swept_external_low", False)),
         "Internal touch": bool(latest.get("touches_internal_liquidity", False)),
-        
+        "Pattern": latest.get("candle_pattern", "neutral"),
     }
 
-def run_screen():
+def run_strategy_scan():
     pass
 
