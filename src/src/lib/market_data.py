@@ -162,7 +162,13 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
                 "High": float(row["High"]),
                 "Low": float(row["Low"]),
                 "Close": float(row["Close]"]),
-                "Volume": int(row["Volume"]),
+                "previous_swing_high": row.get("previous_swing_high"),
+                "previous_swing_low": row.get("previous_swing_low"),
+                "bullish_structure_shift": bool(row.get("bullish_structure_shift", False)),
+                "bearish_structure_shift": bool(row.get("bearish_structure_shift", False)),
+                "bullish_cisd": bool(row.get("bullish_cisd", False)),
+                "bearish_cisd": bool(row.get("bearish_cisd", False)),
+                
             }
         )
     
