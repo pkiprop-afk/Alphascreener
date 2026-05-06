@@ -184,6 +184,17 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
     return result
 
 def build_summary_latest_setup(ticker: str, signal_df: pd.DataFrame) -> dict:
+    """ 
+    Summarize the latest evaluated ICT setup for a single ticker into a compact dictionary.
+    The function extracts key outcome fields from the most recent signal row to support reporting and display.
+
+    Args:
+        ticker: Symbol string whose latest setup is being summarized.
+        signal_df: DataFrame of ICT signal evaluations, including a 'setup_valid' flag and related context columns.
+
+    Returns:
+        A dictionary containing the ticker, latest close price, setup validity, side, and core ICT condition flags.
+    """
     latest = signal_df.iloc[-1]
     return {
         "Ticker": ticker,
