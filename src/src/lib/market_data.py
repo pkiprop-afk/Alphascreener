@@ -183,8 +183,18 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
     result = result.set_index("timestamp")
     return result
 
-def build_summary_row():
-    pass
+def build_summary_latest_setup(ticker: str, signal_df: pd.DataFrame) -> dict:
+    latest = signal_df.iloc[-1]
+    return {
+        "Ticker": ticker,
+        "Close": round(float(latest["Close"]), 2),
+        "Side": latest.get("trade_side", "neutral"),
+        "Setup Valid": bool(latest.get("setup_valid", False)),
+        "Structure shift": bool(latest.get("bullish_structure_shift", False) or latest.get("bearish_structure_shift", False)),
+        "CISD": bool(latest.get("bullish_cisd", False) or latest.get("bearish_cisd", False)),
+        "FVG": bool(latest.get("bullish_fvg", False) or latest.get("bearish_fvg", False)),
+        
+    }
 
 def run_screen():
     pass
