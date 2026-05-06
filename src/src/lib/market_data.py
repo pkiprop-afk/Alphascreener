@@ -215,9 +215,10 @@ def run_strategy_scan(tickers: list[str], strategy: dict) -> tuple[pd.DataFrame,
     matched_rows = []
     errors = []
     
-    # Iterate through each sticker 
+    # Iterate through each ticker to fetch data and check for valid strategy setups
     for ticker in tickers:
         try:
+            # Fetch history and ensures there is enough data for analysis
             raw_df = fetch_history_for_sticker(ticker, interval=interval)
             if raw_df.empty or len(raw_df) < 40:
                 continue
