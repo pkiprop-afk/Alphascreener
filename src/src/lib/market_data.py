@@ -222,10 +222,12 @@ def run_strategy_scan(tickers: list[str], strategy: dict) -> tuple[pd.DataFrame,
             raw_df = fetch_history_for_sticker(ticker, interval=interval)
             if raw_df.empty or len(raw_df) < 40:
                 continue
+            # Make sure it has data with ICT signals and build the final signal table
             have_df = have_with_ict_signal(raw_df, strategy)
             signal_df = build_signal_table(have_df, strategy)
             if signal_df.empty:
                 continue
+            # If the latest bar shows a valid setup, add it to the matched results
             latest_row = signal_df.iloc[-1]
             if bool(latest_row.get("setup_valid", False)):
                 matched_rows.append(build_summary_latest_setup(ticker, signal_df))
