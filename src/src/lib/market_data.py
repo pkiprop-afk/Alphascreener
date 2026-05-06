@@ -237,7 +237,7 @@ def run_strategy_scan(tickers: list[str], strategy: dict) -> tuple[pd.DataFrame,
     # Returns an empty DataFrame if not matches were found
     if not matched_rows:
         return pd.DataFrame(), errors
-    
+    # sorts the results by validity and ticker name before returning it
     results_df = pd.DataFrame(matched_rows)
     sorted_df = results_df.sort_values(by=["Setup Valid", "Ticker"], ascending=[False, True]).reset_index(drop=True)
     return results_df, errors
