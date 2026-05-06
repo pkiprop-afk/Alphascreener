@@ -64,3 +64,6 @@ def render_header_row():
 def render_control_strip():
     pass
 
+def get_ticker_analysis():
+    pass
+
