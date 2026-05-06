@@ -198,6 +198,22 @@ def build_summary_latest_setup(ticker: str, signal_df: pd.DataFrame) -> dict:
         "Pattern": latest.get("candle_pattern", "neutral"),
     }
 
-def run_strategy_scan():
-    pass
-
+def run_strategy_scan(tickers: list[str], strategy: dict) -> tuple[pd.DataFrame, list[str]]:
+    interval = strategy.get("timeframe", "1d")
+    matched_rows = []
+    errors = []
+    
+    for ticker in tickers:
+        try:
+            raw_df = fetch_history_for_sticker(ticker, interval=interval)
+            if raw_df.empty or len(raw_df) < 40:
+                continue
+            have_df = have_with_ict_signal(raw_df, strategy)
+            signal_df = build_signal_table(have_df, strategy)
+            if signal_df.empty:
+                continue
+            latest_row = signal_df.iloc[-1]
+            if bool(latest_row.get("setup_valid", False)):
+                matched_rows.append(build_summary_latest_setup(ticker, signal_df))
+        except Exception as e:
+            errors.append(f"Error scanning {ticker}:")
