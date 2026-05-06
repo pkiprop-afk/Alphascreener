@@ -166,11 +166,11 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
                 "previous_swing_low": row.get("previous_swing_low"),
                 "bullish_structure_shift": bool(row.get("bullish_structure_shift", False)), # -> Structure shift
                 "bearish_structure_shift": bool(row.get("bearish_structure_shift", False)),
-                "bullish_cisd": bool(row.get("bullish_cisd", False)), # -> Change in state of delivery
+                "bullish_cisd": bool(row.get("bullish_cisd", False)), # -> Change in state of delivery (CISD)
                 "bearish_cisd": bool(row.get("bearish_cisd", False)),
-                "bullish_fvg": bool(row.get("bullish_fvg", False)),
+                "bullish_fvg": bool(row.get("bullish_fvg", False)), # -> Fair value gap (FVG)
                 "bearish_fvg": bool(row.get("bearish_fvg", False)),
-                "touches_internal_liquidity": bool(row.get("touches_internal_liquidity", False)),
+                "touches_internal_liquidity": bool(row.get("touches_internal_liquidity", False)), # -> external and internal liquidity
                 "swept_external_high": bool(row.get("swept_external_high", False)),
                 "swept_external_low": bool(row.get("swept_external_low", False)),
                 "candle_pattern": row.get("candle_pattern", "neutral"),
