@@ -222,4 +222,8 @@ def run_strategy_scan(tickers: list[str], strategy: dict) -> tuple[pd.DataFrame,
     if not matched_rows:
         return pd.DataFrame(), errors
     
-    
+    results_df = pd.DataFrame(matched_rows)
+    sorted_df = results_df.sort_values(by=["Setup Valid", "Ticker"], ascending=[False, True]).reset_index(drop=True)
+    return results_df, errors
+
+
