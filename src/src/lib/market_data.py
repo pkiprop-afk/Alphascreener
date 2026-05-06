@@ -173,7 +173,7 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
                 "touches_internal_liquidity": bool(row.get("touches_internal_liquidity", False)),
                 "swept_external_high": bool(row.get("swept_external_high", False)),
                 "swept_external_low": bool(row.get("swept_external_low", False)),
-                "candle_pattern": row.get("candle_pattern")
+                "candle_pattern": row.get("candle_pattern", "neutral"),
             }
         )
     
