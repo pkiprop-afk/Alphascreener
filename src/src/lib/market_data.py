@@ -234,7 +234,7 @@ def run_strategy_scan(tickers: list[str], strategy: dict) -> tuple[pd.DataFrame,
         except Exception as e:
             errors.append(f"Error scanning {ticker}: {str(e)}")
             continue
-    
+    # Returns an empty DataFrame if not matches were found
     if not matched_rows:
         return pd.DataFrame(), errors
     
