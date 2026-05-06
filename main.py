@@ -39,3 +39,6 @@ def load_sticker_universe() -> list[str]:
     if "ticker" not in ticker_df.columns:
         return []
     return ticker_df["ticker"].dropna().astype(str).str.upper().tolist()
+
+def load_strategy_library(): -> list[dict]:
+    return load_json_file(STRATEGIES_PATH, default=[DEFAULT_STRATEGY])
