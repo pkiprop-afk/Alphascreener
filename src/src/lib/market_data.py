@@ -177,6 +177,11 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
             }
         )
     
+    result = pd.DataFrame(records)
+    if result.empty:
+        return result
+    result = result.set_index("timestamp")
+    return result
 
 def build_summary_row():
     pass
