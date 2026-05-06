@@ -168,7 +168,12 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
                 "bearish_structure_shift": bool(row.get("bearish_structure_shift", False)),
                 "bullish_cisd": bool(row.get("bullish_cisd", False)),
                 "bearish_cisd": bool(row.get("bearish_cisd", False)),
-                
+                "bullish_fvg": bool(row.get("bullish_fvg", False)),
+                "bearish_fvg": bool(row.get("bearish_fvg", False)),
+                "touches_internal_liquidity": bool(row.get("touches_internal_liquidity", False)),
+                "swept_external_high": bool(row.get("swept_external_high", False)),
+                "swept_external_low": bool(row.get("swept_external_low", False)),
+                "candle_pattern": row.get("candle_pattern")
             }
         )
     
