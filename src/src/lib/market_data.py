@@ -170,10 +170,10 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
                 "bearish_cisd": bool(row.get("bearish_cisd", False)),
                 "bullish_fvg": bool(row.get("bullish_fvg", False)), # -> Fair value gap (FVG)
                 "bearish_fvg": bool(row.get("bearish_fvg", False)),
-                "touches_internal_liquidity": bool(row.get("touches_internal_liquidity", False)), # -> external and internal liquidity
-                "swept_external_high": bool(row.get("swept_external_high", False)),
+                "touches_internal_liquidity": bool(row.get("touches_internal_liquidity", False)), # -> Liquidity context
+                "swept_external_high": bool(row.get("swept_external_high", False)), # -> external and internal liquidity
                 "swept_external_low": bool(row.get("swept_external_low", False)),
-                "candle_pattern": row.get("candle_pattern", "neutral"),
+                "candle_pattern": row.get("candle_pattern", "neutral"), # -> Candle stick pattern 
             }
         )
     
