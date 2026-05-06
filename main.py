@@ -67,3 +67,9 @@ def render_control_strip():
 def get_ticker_analysis():
     pass
 
+def build_workspace_data():
+    pass
+
+def render_signal_timeliine():
+    pass
+
