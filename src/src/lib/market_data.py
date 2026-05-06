@@ -216,4 +216,10 @@ def run_strategy_scan(tickers: list[str], strategy: dict) -> tuple[pd.DataFrame,
             if bool(latest_row.get("setup_valid", False)):
                 matched_rows.append(build_summary_latest_setup(ticker, signal_df))
         except Exception as e:
-            errors.append(f"Error scanning {ticker}:")
+            errors.append(f"Error scanning {ticker}: {str(e)}")
+            continue
+    
+    if not matched_rows:
+        return pd.DataFrame(), errors
+    
+    
