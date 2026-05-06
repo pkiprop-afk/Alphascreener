@@ -199,6 +199,17 @@ def build_summary_latest_setup(ticker: str, signal_df: pd.DataFrame) -> dict:
     }
 
 def run_strategy_scan(tickers: list[str], strategy: dict) -> tuple[pd.DataFrame, list[str]]:
+    """ 
+    Scan a list of tickers for valid ICT-based trade setups using a shared strategy configuration.
+    The function returns a table summarizing the latest qualifying setups alongside any errors encountered during scanning.
+
+    Args:
+        tickers: List of symbol strings to download, annotate, and evaluate for trade setups.
+        strategy: Strategy configuration dictionary specifying timeframe, filters, and entry model rules.
+
+    Returns:
+        A tuple of (results_df, errors) where results_df summarizes matching setups per ticker and errors is a list of error messages.
+    """
     interval = strategy.get("timeframe", "1d")
     matched_rows = []
     errors = []
