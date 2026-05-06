@@ -166,7 +166,7 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
                 "previous_swing_low": row.get("previous_swing_low"),
                 "bullish_structure_shift": bool(row.get("bullish_structure_shift", False)), # -> Structure shift
                 "bearish_structure_shift": bool(row.get("bearish_structure_shift", False)),
-                "bullish_cisd": bool(row.get("bullish_cisd", False)),
+                "bullish_cisd": bool(row.get("bullish_cisd", False)), # -> Change in state of delivery
                 "bearish_cisd": bool(row.get("bearish_cisd", False)),
                 "bullish_fvg": bool(row.get("bullish_fvg", False)),
                 "bearish_fvg": bool(row.get("bearish_fvg", False)),
