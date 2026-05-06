@@ -210,10 +210,12 @@ def run_strategy_scan(tickers: list[str], strategy: dict) -> tuple[pd.DataFrame,
     Returns:
         A tuple of (results_df, errors) where results_df summarizes matching setups per ticker and errors is a list of error messages.
     """
+    # Initialize scan perimeters and result containers
     interval = strategy.get("timeframe", "1d")
     matched_rows = []
     errors = []
     
+    # Iterate through each sticker 
     for ticker in tickers:
         try:
             raw_df = fetch_history_for_sticker(ticker, interval=interval)
