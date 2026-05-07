@@ -155,7 +155,12 @@ def render_header_row(strategy: dict) -> None:
             tickers_to_scan = tickers[:st.session_state.universe_size]
             with st.spinner(f"Scanning {len(tickers_to_scan)} tickers..."):
                 result_df, scan_errors = run_strategy_scan(tickers_to_scan, strategy)
-                st.session_state
+                st.session_state.scanner_results = result_df
+                
+                for err in scan_errors:
+                    st.warning(err)
+    
+
 
 def render_control_strip():
     pass
