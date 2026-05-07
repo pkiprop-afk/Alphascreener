@@ -139,7 +139,7 @@ def reset_paper_test_on_ticker_change() -> None:
 def render_header_row(strategy: dict) -> None:
     tickers = load_sticker_universe()
     header_left, header_right = st.columns([4, 1])
-
+    
     with header_left:
         st.selectbox(
             "Ticker Search",
@@ -148,28 +148,23 @@ def render_header_row(strategy: dict) -> None:
             help= "Ticker universe loaded from data/tickers.csv",
             on_change=reset_paper_test_on_ticker_change,
         )
-
+    
     with header_right:
         st.write("")
         if st.button("Run Screen", use_container_width=True, type="primary"):
             tickers_to_scan = tickers[:st.session_state.universe_size]
             with st.spinner(f"Scanning {len(tickers_to_scan)} tickers..."):
-                _extracted_from_render_header_row_19(tickers_to_scan, strategy)
-
-
-# TODO Rename this here and in `render_header_row`
-def _extracted_from_render_header_row_19(tickers_to_scan, strategy):
-    result_df, scan_errors = run_strategy_scan(tickers_to_scan, strategy)
-    st.session_state.scanner_results = result_df
-
-    for err in scan_errors:
-        st.warning(err)
-
-    if not result_df.empty:
-        st.session_state.selected_ticker = result_df.iloc[0]["Ticker"]
-
-    st.session_state.header_run_screen = True
-    st.rerun()
+                result_df, scan_errors = run_strategy_scan(tickers_to_scan, strategy)
+                st.session_state.scanner_results = result_df
+                
+                for err in scan_errors:
+                    st.warning(err)
+    
+                if not result_df.empty:
+                    st.session_state.selected_ticker = result_df.iloc[0]["Ticker"]
+                    
+                st.session_state.header_run_screen = True
+                st.rerun()
 
 def render_control_strip():
     pass
