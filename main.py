@@ -97,7 +97,7 @@ def sync_selected_model() -> None:
     st.session_state.require_fvg = selected.get("entry_model", {}).get("require_fvg", True)
     st.session_state.require_cisd = selected.get("entry_model", {}).get("require_cisd", True)
     st.session_state.risk_reward = selected.get("risk_model", {}).get("risk_reward", 2.0)
-    st.session_state.max_holding_bars = selected.get("risk_model", {}).get("max_holding_bars", 12)
+    st.session_state.max_holding_bars = selected.get("risk_model", {}).get("max_holding_bars", 20)
 
 
 def create_new_model() -> None:
