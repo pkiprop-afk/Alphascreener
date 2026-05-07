@@ -139,6 +139,17 @@ def reset_paper_test_on_ticker_change() -> None:
 def render_header_row(strategy: dict) -> None:
     tickers = load_sticker_universe()
     header_left, header_right = st.columns([4, 1])
+    
+    with header_left:
+        st.selectbox(
+            "Ticker Search",
+            options=tickers,
+            key="selected_ticker",
+            help= "Ticker universe loaded from data/tickers.csv",
+            on_change=reset_paper_test_on_ticker_change,
+        )
+    
+    
 
 def render_control_strip():
     pass
