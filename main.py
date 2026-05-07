@@ -136,8 +136,9 @@ def reset_paper_test_on_ticker_change() -> None:
     if "paper_test_result" in st.session_state:
         st.session_state.paper_test_result = {}
 
-def render_header_row():
-    pass
+def render_header_row(strategy: dict) -> None:
+    tickers = load_sticker_universe()
+    
 
 def render_control_strip():
     pass
