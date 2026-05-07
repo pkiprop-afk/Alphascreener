@@ -65,7 +65,8 @@ def initialize_session_state() -> None:
             st.session_state[key] = value
 
 def build_focus_strategy() -> dict:
-    pass
+    strategy = json.loads(json.dumps(DEFAULT_STRATEGY))
+    
 
 def sync_selected_model():
     pass
