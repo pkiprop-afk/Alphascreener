@@ -126,6 +126,13 @@ def create_new_model() -> None:
 
 
 def reset_paper_test_on_ticker_change() -> None:
+    """ 
+    Clear any existing paper test results when the selected ticker changes.
+    The function ensures that backtest summaries do not persist across different symbols in the current session.
+
+    Returns:
+        None. The function resets st.session_state['paper_test_result'] to an empty dict if it exists
+    """
     if "paper_test_result" in st.session_state:
         st.session_state.paper_test_result = {}
 
