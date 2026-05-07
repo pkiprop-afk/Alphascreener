@@ -147,6 +147,7 @@ def render_header_row(strategy: dict) -> None:  # sourcery skip: extract-method
     Returns:
         None. The function interacts with Streamlit widgets and st.session_state to drive the header UI behaviour
     """
+    # Setup the layout for ticker selection and the run button
     tickers = load_sticker_universe()
     header_left, header_right = st.columns([4, 1])
     
