@@ -44,7 +44,18 @@ def load_strategy_library() -> list[dict]:
     return load_json_file(STRATEGIES_PATH, default=[DEFAULT_STRATEGY])
 
 def initialize_session_state() -> None:
-    pass
+    defaults = {
+        "selected_ticker": "AAPL",
+        "selected_model_name": DEFAULT_STRATEGY["name"],
+        "model_type": "swing",
+        "require_structure_shift": DEFAULT_STRATEGY["entry_model"]["require_structure_shift"],
+        "require_fvg": DEFAULT_STRATEGY["entry_model"]["require_fvg"],
+        "require_cisd": DEFAULT_STRATEGY["entry_model"]["require_cisd"],
+        "risk_reward": DEFAULT_STRATEGY["entry_model"]["risk_reward"],
+        "max_holding_bars": DEFAULT_STRATEGY["entry_model"]["max_holding_bars"],
+        "universe_size": 50,
+        
+    }
 
 def build_focus_strategy():
     pass
