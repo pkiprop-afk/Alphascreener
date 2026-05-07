@@ -71,8 +71,9 @@ def build_focus_strategy() -> dict:
     strategy["entry_model"]["require_structure_shift"] = st.session_state.require_structure_shift
     strategy["entry_model"]["require_fvg"] = st.session_state.require_fvg
     strategy["entry_model"]["require_cisd"] = st.session_state.require_cisd
-    
-    
+    strategy["risk_model"]["risk_reward"] = float(st.session_state.risk_reward)
+    strategy["risk_model"]["max_holding_bars"] = int(st.session_state.max_holding_bars)
+    return strategy
 
 def sync_selected_model():
     pass
