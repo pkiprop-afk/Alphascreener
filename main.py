@@ -93,7 +93,8 @@ def sync_selected_model() -> None:
         return
     st.session_state.model_name_input = selected.get("name", DEFAULT_STRATEGY["name"])
     st.session_state.model_type = selected.get("model_type", DEFAULT_STRATEGY["model_type"])
-    st.session_state.require_structure_shift = selected["entry_model"]["require_structure_shift"]
+    st.session_state.require_structure_shift = selected.get("entry_model", {}).get("require_structure_shift", True)
+    
 
 def create_new_model() -> None:
     pass
