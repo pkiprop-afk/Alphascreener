@@ -65,6 +65,13 @@ def initialize_session_state() -> None:
             st.session_state[key] = value
 
 def build_focus_strategy() -> dict:
+    """ 
+    Construct a working strategy configuration based on the current UI-focused model settings.
+    The function clones the default strategy template and overlays user-controlled session state values to produce a ready-to-use strategy dict.
+
+    Returns:
+        A dictionary representing the current focus strategy, including name, model_type, entry conditions, and risk parameters
+    """
     strategy = json.loads(json.dumps(DEFAULT_STRATEGY))
     strategy["name"] = st.session_state.model_name_input.strip() or "Untitled Focus Model" 
     strategy["model_type"] = st.session_state.model_type
