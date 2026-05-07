@@ -95,7 +95,7 @@ def sync_selected_model() -> None:
     st.session_state.model_type = selected.get("model_type", DEFAULT_STRATEGY["model_type"])
     st.session_state.require_structure_shift = selected.get("entry_model", {}).get("require_structure_shift", True)
     st.session_state.require_fvg = selected.get("entry_model", {}).get("require_fvg", True)
-    st.session_state.require_cisd = selected.get("risk_model", {}).get("risk_reward", 2.0)
+    st.session_state.require_cisd = selected.get("entry", {}).get("risk_reward", 2.0)
     st.session_state.risk_reward = selected.get("risk_model", {}).get("risk_reward", 2.0)
 
 
