@@ -149,7 +149,13 @@ def render_header_row(strategy: dict) -> None:
             on_change=reset_paper_test_on_ticker_change,
         )
     
-    
+    with header_right:
+        st.write("")
+        if st.button("Run Screen", use_container_width=True, type="primary"):
+            tickers_to_scan = tickers[:st.session_state.universe_size]
+            with st.spinner(f"Scanning {len(tickers_to_scan)} tickers..."):
+                result_df, scan_errors = run_strategy_scan(tickers_to_scan, strategy)
+                st.session_state
 
 def render_control_strip():
     pass
