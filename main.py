@@ -162,6 +162,9 @@ def render_header_row(strategy: dict) -> None:
     
                 if not result_df.empty:
                     st.session_state.selected_ticker = result_df.iloc[0]["Ticker"]
+                    
+                st.session_state.header_run_screen = True
+                st.rerun()
 
 def render_control_strip():
     pass
