@@ -137,6 +137,16 @@ def reset_paper_test_on_ticker_change() -> None:
         st.session_state.paper_test_result = {}
 
 def render_header_row(strategy: dict) -> None:
+    """ 
+    Render the main header controls for selecting a ticker and running the strategy scanner.
+    The function updates session state with scan results, surfaces any scan errors, and can trigger a rerun of the app when a screen is executed.
+
+    Args:
+        strategy: Strategy configuration dict used when running the screening process across the ticker universe.
+
+    Returns:
+        None. The function interacts with Streamlit widgets and st.session_state to drive the header UI behaviour
+    """
     tickers = load_sticker_universe()
     header_left, header_right = st.columns([4, 1])
     
