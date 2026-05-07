@@ -136,7 +136,7 @@ def reset_paper_test_on_ticker_change() -> None:
     if "paper_test_result" in st.session_state:
         st.session_state.paper_test_result = {}
 
-def render_header_row(strategy: dict) -> None:
+def render_header_row(strategy: dict) -> None:  # sourcery skip: extract-method
     """ 
     Render the main header controls for selecting a ticker and running the strategy scanner.
     The function updates session state with scan results, surfaces any scan errors, and can trigger a rerun of the app when a screen is executed.
