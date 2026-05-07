@@ -54,8 +54,15 @@ def initialize_session_state() -> None:
         "risk_reward": DEFAULT_STRATEGY["entry_model"]["risk_reward"],
         "max_holding_bars": DEFAULT_STRATEGY["entry_model"]["max_holding_bars"],
         "universe_size": 50,
-        
+        "scanner_results":pd.DataFrame(),
+        "signal_timeline": pd.DataFrame(),
+        "paper_test_result": {},
+        "model_name_input": DEFAULT_STRATEGY["name"],
+        "header_run_screen": False,
     }
+    for key, value in defaults.items():
+        if key not in st.session_state:
+            st.session_state[key] = value
 
 def build_focus_strategy():
     pass
