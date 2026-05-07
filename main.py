@@ -160,7 +160,8 @@ def render_header_row(strategy: dict) -> None:
                 for err in scan_errors:
                     st.warning(err)
     
-
+                if not result_df.empty:
+                    st.session_state.selected_ticker = result_df.iloc[0]["Ticker"]
 
 def render_control_strip():
     pass
