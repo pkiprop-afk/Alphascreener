@@ -108,6 +108,13 @@ def sync_selected_model() -> None:
 
 
 def create_new_model() -> None:
+    """ 
+    Reset the current focus model configuration to a fresh, default swing strategy template.
+    The function initializes key Streamlit session state fields for a new model, ready for user customization.
+
+    Returns:
+        None. The function updates st.session_state in place with default model name, type, and core entry and risk parameters
+    """
     st.session_state.selected_model_name = NEW_MODEL_OPTION
     st.session_state.model_name_input = "Untitled Focus Model"
     st.session_state.model_type = "swing"
