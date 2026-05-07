@@ -83,6 +83,13 @@ def build_focus_strategy() -> dict:
     return strategy
 
 def sync_selected_model() -> None:
+    """ 
+    Synchronize the currently selected strategy model into Streamlit session state.
+    The function loads the chosen strategy from the library and updates UI-controlled fields to reflect its configuration.
+
+    Returns:
+        None. The function mutates st.session_state in place to match the selected strategy or initializes a new model when requested
+    """
     if st.session_state.selected_model_name == NEW_MODEL_OPTION:
         create_new_model()
         return
