@@ -64,7 +64,7 @@ def initialize_session_state() -> None:
         if key not in st.session_state:
             st.session_state[key] = value
 
-def build_focus_strategy():
+def build_focus_strategy() -> dict:
     pass
 
 def sync_selected_model():
