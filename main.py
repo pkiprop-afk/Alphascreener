@@ -82,8 +82,13 @@ def build_focus_strategy() -> dict:
     strategy["risk_model"]["max_holding_bars"] = int(st.session_state.max_holding_bars)
     return strategy
 
-def sync_selected_model():
-    pass
+def sync_selected_model() -> None:
+    if st.session_state.selected_model_name == NEW_MODEL_OPTION:
+        create_new_model()
+        return
+    
+    library = load_strategy_library()
+    selected = next((item for item in library if item["name"] == st.session_state.selected_model_name), None)
 
 def create_new_model() -> None:
     pass
