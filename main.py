@@ -138,7 +138,7 @@ def reset_paper_test_on_ticker_change() -> None:
 
 def render_header_row(strategy: dict) -> None:
     tickers = load_sticker_universe()
-    
+    header_left, header_right = st.columns([4, 1])
 
 def render_control_strip():
     pass
