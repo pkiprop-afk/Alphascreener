@@ -111,7 +111,11 @@ def create_new_model() -> None:
     st.session_state.selected_model_name = NEW_MODEL_OPTION
     st.session_state.model_name_input = "Untitled Focus Model"
     st.session_state.model_type = "swing"
-    
+    st.session_state.require_structure_shift = True
+    st.session_state.require_fvg = True
+    st.session_state.require_cisd = True
+    st.session_state.risk_reward = 2.0
+    st.session_state.max_holding_bars
 
 
 def reset_paper_test_on_ticker_change():
