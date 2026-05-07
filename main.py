@@ -108,7 +108,11 @@ def sync_selected_model() -> None:
 
 
 def create_new_model() -> None:
-    pass
+    st.session_state.selected_model_name = NEW_MODEL_OPTION
+    st.session_state.model_name_input = "Untitled Focus Model"
+    st.session_state.model_type = "swing"
+    
+
 
 def reset_paper_test_on_ticker_change():
     pass
