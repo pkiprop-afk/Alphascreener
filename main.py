@@ -89,6 +89,11 @@ def sync_selected_model() -> None:
     
     library = load_strategy_library()
     selected = next((item for item in library if item["name"] == st.session_state.selected_model_name), None)
+    if not selected:
+        return
+    st.session_state.model_name_input = selected.get("name", DEFAULT_STRATEGY["name"])
+    st.session_state.model_type = selected.get("model_type", DEFAULT_STRATEGY["model_type"])
+    st.session_state.require_structure_shift = selected["entry_model"]["require_structure_shift"]
 
 def create_new_model() -> None:
     pass
