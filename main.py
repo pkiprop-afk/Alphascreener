@@ -67,8 +67,9 @@ def initialize_session_state() -> None:
 def build_focus_strategy() -> dict:
     strategy = json.loads(json.dumps(DEFAULT_STRATEGY))
     strategy["name"] = st.session_state.model_name_input.strip() or "Untitled Focus Model" 
-    strategy["model_type"]["require_structure_shift"]
-    strategy["entry_model"]["require_structure_shift"] = st.session_state.require_structure_shift
+    strategy["model_type"] = st.session_state.model_type,
+    strategy["entry_model"]["require_structure_shift"] = st.session_state.require_structure_shift,
+    
     
     
 
