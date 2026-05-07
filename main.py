@@ -115,7 +115,7 @@ def create_new_model() -> None:
     st.session_state.require_fvg = True
     st.session_state.require_cisd = True
     st.session_state.risk_reward = 2.0
-    st.session_state.max_holding_bars
+    st.session_state.max_holding_bars = 20
 
 
 def reset_paper_test_on_ticker_change():
