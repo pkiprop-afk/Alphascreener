@@ -160,6 +160,7 @@ def render_header_row(strategy: dict) -> None:  # sourcery skip: extract-method
             on_change=reset_paper_test_on_ticker_change,
         )
     
+    # When the "Run Screen" button is clicked, scan the universe and update the results
     with header_right:
         st.write("")
         if st.button("Run Screen", use_container_width=True, type="primary"):
