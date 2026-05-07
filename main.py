@@ -125,8 +125,9 @@ def create_new_model() -> None:
     st.session_state.max_holding_bars = 20
 
 
-def reset_paper_test_on_ticker_change():
-    pass
+def reset_paper_test_on_ticker_change() -> None:
+    if "paper_test_result" in st.session_state:
+        st.session_state.paper_test_result = {}
 
 def render_header_row():
     pass
