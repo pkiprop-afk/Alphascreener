@@ -216,8 +216,15 @@ def render_analysis_panel(workspace: dict) -> None:
     st.markdown("### Status Badges")
     render_status_badge(
         "MSS",
-        bool(latest_row.get("bullish_structure_shift", False) or latest_row.get("bearish_structure_shift", False))
+        bool(latest_row.get("bullish_structure_shift", False) or latest_row.get("bearish_structure_shift", False)),
+        "Bullish or bearish shift confirmed.",
+        "No current structure shift confirmation, ",
     )
+    render_status_badge(
+    "FVG",
+    bool(latest_row.get("bullish_structure_shift", False) or latest_row.get("swept_external_row"))    
+    )
+    
 def render_control_strip():
     pass
 
