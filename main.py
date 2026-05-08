@@ -244,7 +244,7 @@ def get_ticker_analysis(ticker: str, interval: str, _strategy_json: str) -> tupl
     return ohlc_df, enriched_df, signal_df
 
 def build_workspace_data(strategy: dict) -> dict:
-    ticker = st.session_state.selected_sticker
+    ticker = st.session_state.selected_ticker
     interval = strategy.get("timeframe", "1d")
     
     workspace = {
