@@ -216,7 +216,7 @@ def render_analysis_panel(workspace: dict) -> None:
     st.markdown("### Status Badges")
     render_status_badge(
         "MSS",
-        bool(latest_row.get("bullish_structure_shift", False) or latest)
+        bool(latest_row.get("bullish_structure_shift", False) or latest_row.get("bearish_structure_shift", False))
     )
 def render_control_strip():
     pass
