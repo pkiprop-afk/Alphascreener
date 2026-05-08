@@ -252,6 +252,10 @@ def render_analysis_panel(workspace: dict) -> None:
                     st.rerun()
             else:
                 st.warning("Not enough data to run paper test.")
+        
+        col_a, col_b = st.columns(2)
+        col_a.metric("Win Rate", paper_metrics.get("win_rate", "N/A"))
+        col_b.metric("Total R")
     
 def render_control_strip():
     pass
