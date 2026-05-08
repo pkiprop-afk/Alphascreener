@@ -228,7 +228,9 @@ def render_analysis_panel(workspace: dict) -> None:
     )
     render_status_badge(
         "Liquidity Sweep",
-        bool(latest_row.get("swept_external_law"))
+        bool(latest_row.get("swept_external_high", False) or latest_row.get("swept_external_low", False)),
+        "Liquidity sweep is present in the current setup.",
+        "No recent buyside or sellside sweep detected.",
     )
     
 def render_control_strip():
