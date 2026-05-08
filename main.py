@@ -293,8 +293,9 @@ def render_signal_timeline(signal_df: pd.DataFrame) -> None:
             "bullish_fvg",
             "bearish_fvg",
             "swept_external_high",
-            "swept_externa"
-        ]
+            "swept_external_low",
+            "setup_valid",
+        ] if co 
     ]
 
 def render_lens_panel(strategy: dict, workspace: dict):
