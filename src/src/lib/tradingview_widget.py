@@ -25,5 +25,3 @@ def render_tradingview_widget(symbol: str, interval: str = "D", height: int = 52
     </div>
     """
     components.html(html, height=height)
-
-    
