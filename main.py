@@ -295,8 +295,9 @@ def render_signal_timeline(signal_df: pd.DataFrame) -> None:
             "swept_external_high",
             "swept_external_low",
             "setup_valid",
-        ] if co 
+        ] if col in display_df.columns
     ]
+    st.dataframe
 
 def render_lens_panel(strategy: dict, workspace: dict):
     """ 
