@@ -297,8 +297,7 @@ def render_signal_timeline(signal_df: pd.DataFrame) -> None:
             "setup_valid",
         ] if col in display_df.columns
     ]
-    st.dataframe
-
+    st.dataframe(display_df[display_columns], hide_index = True)
 def render_lens_panel(strategy: dict, workspace: dict):
     """ 
     """
