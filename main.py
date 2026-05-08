@@ -278,8 +278,7 @@ def build_workspace_data(strategy: dict) -> dict:
     return workspace
         
 def render_signal_timeline(signal_df: pd.DataFrame) -> None:
-    
-    pass
+    st.markdown("####")
 
 def render_lens_panel(strategy: dict, workspace: dict):
     """ 
