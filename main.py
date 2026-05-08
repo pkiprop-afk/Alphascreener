@@ -292,7 +292,8 @@ def render_signal_timeline(signal_df: pd.DataFrame) -> None:
             "bearish_cisd",
             "bullish_fvg",
             "bearish_fvg",
-            
+            "swept_external_high",
+            "swept_externa"
         ]
     ]
 
