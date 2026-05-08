@@ -297,7 +297,8 @@ def render_signal_timeline(signal_df: pd.DataFrame) -> None:
             "setup_valid",
         ] if col in display_df.columns
     ]
-    st.dataframe(display_df[display_columns], hide_index =True, use_container_width=Trie)
+    st.dataframe(display_df[display_columns], hide_index =True, use_container_width=True)
+
 def render_lens_panel(strategy: dict, workspace: dict):
     """ 
     """
@@ -308,7 +309,7 @@ def render_lens_panel(strategy: dict, workspace: dict):
     with st.container(border=True):
         render_tradingview_widget(ticker, interval=tv_interval, height=500)
     with st.container(border=True):
-        render_signal_timeliine(workspace["signal_df"])
+        render_signal_timeline(workspace["signal_df"])
 
 def render_status_badge(label: str, active: bool, active_text: str, inactive_text: str) -> None:
     with st.container(border=True):
