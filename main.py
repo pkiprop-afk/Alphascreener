@@ -264,15 +264,4 @@ def render_analysis_panel(workspace: dict) -> None:
             st.markdown("### Screen Results")
             st.dataframe(workspace["screen_results"].head(5), hide_index=True, use_container_width=True)
     
-def render_control_strip():
-    pass
-
-def get_ticker_analysis():
-    pass
-
-def build_workspace_data():
-    pass
-
-def render_signal_timeliine():
-    pass
 
