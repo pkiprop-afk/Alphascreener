@@ -258,6 +258,10 @@ def render_analysis_panel(workspace: dict) -> None:
         col_b.metric("Total R", paper_metrics.get("total_r", "N/A"))
         st.caption("Click button to run a backtest on the full history for this ticker.")
     
+    if isinstance(workspace.get("screen_results"), pd.DataFrame) and not workspace["screen_results"].empty:
+        with st.container(border=True):
+            st.markdown("### Screen Results")
+            st.dataframe(workspace["screen_results"].head(5), hide_index=True, use_container_width=True)
     
 def render_control_strip():
     pass
