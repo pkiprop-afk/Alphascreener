@@ -222,7 +222,13 @@ def render_analysis_panel(workspace: dict) -> None:
     )
     render_status_badge(
     "FVG",
-    bool(latest_row.get("bullish_structure_shift", False) or latest_row.get("swept_external_row"))    
+    bool(latest_row.get("bullish_fvg", False) or latest_row.get("bearish_fvg", False)),
+    "Fair value imbalance is active in the current sequence.",
+    "No active fair value gap signal.",
+    )
+    render_status_badge(
+        "Liquidity Sweep",
+        bool(latest_row.get("swept_external_law"))
     )
     
 def render_control_strip():
