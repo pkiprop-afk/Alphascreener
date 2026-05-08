@@ -282,7 +282,7 @@ def render_signal_timeline(signal_df: pd.DataFrame) -> None:
     if signal_df is None or signal_df.empty:
         st.info("No recent signals to display yet.")
         return
-    
+    display_df = signal_df.copy().reset
 
 def render_lens_panel(strategy: dict, workspace: dict):
     """ 
