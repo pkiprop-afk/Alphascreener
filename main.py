@@ -236,6 +236,12 @@ def render_control_strip(strategy: dict) -> None:
 def get_sticker_analysis(ticker: str, interval: str, _strategy_json: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     strategy = json.loads(_strategy_json)
     ohlc_df = fetch_history_for_sticker(ticker, interval=interval)
+    if ohlc_df.empty:
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+    
+    enriched_df = have_with_ict_signal(ohlc_df, strategy)
+    signal_df = build_signal_table(enriched_df, strategy)
+    return ohlc_df, enriched_df, signal_df
 
 def build_workspace_data(strategy: dict) -> dict:
     pass
