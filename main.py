@@ -234,7 +234,8 @@ def render_control_strip(strategy: dict) -> None:
     
 @st.cache_data(show_spinner="Analyzing ticker data...")
 def get_sticker_analysis(ticker: str, interval: str, _strategy_json: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    pass
+    strategy = json.loads(_strategy_json)
+    ohlc_df = fetch_history_for_sticker(ticker, interval=interval)
 
 def build_workspace_data(strategy: dict) -> dict:
     pass
