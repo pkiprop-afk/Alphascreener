@@ -67,7 +67,7 @@ def detect_structure_shift(price_df: pd.DataFrame, min_displacement_pct: float =
             bearish = close_price <= threshold
         
         df.at[df.index[idx], "bullish_structure_shift"] = bullish
-        df.at[df.index[idx], "bearish_stucture_shift"] = bearish
+        df.at[df.index[idx], "bearish_structure_shift"] = bearish
         
         if bullish and not bearish:
             df.at[df.index[idx], "structure_direction"] = "bullish"
