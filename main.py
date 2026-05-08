@@ -31,7 +31,7 @@ from src.lib.tradingview_widget import render_tradingview_widget
 
 DATA_DIR = os.path.join(APP_PATH, "data")
 STRATEGIES_PATH = os.path.join(DATA_DIR, "strategies.json")
-TICKERS_PATH = os.path.join(DATA_DIR, "tickers.csv")
+TICKERS_PATH = os.path.join(APP_PATH, "src", "data" "tickers.csv")
 NEW_MODEL_OPTION = "+ Create New Model"
 
 @st.cache_data
