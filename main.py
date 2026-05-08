@@ -193,7 +193,16 @@ def render_lens_panel(strategy: dict, workspace: dict):
     with st.container(border=True):
         render_signal_timeliine(workspace["signal_df"])
 
-
+def render_status_badge(label: str, active: bool, active_text: str, inactive_text: str) -> None:
+    with st.container(border=True):
+        st.markdown(f"**{label}**")
+        if active:
+            st.success("Active")
+            st.caption(active_text)
+        else:
+            st.info("Inactive")
+            st.caption(inactive_text)
+    
 def render_control_strip():
     pass
 
