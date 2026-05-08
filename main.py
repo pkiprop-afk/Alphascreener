@@ -233,7 +233,7 @@ def render_control_strip(strategy: dict) -> None:
         st.caption("This panel owns the active rule set and persists models without changing the backend logic.")
     
 @st.cache_data(show_spinner="Analyzing ticker data...")
-def get_sticker_analysis():
+def get_sticker_analysis(ticker: str, interval: str, _strategy_json: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     pass
 
 def build_workspace_data(strategy: dict) -> dict:
