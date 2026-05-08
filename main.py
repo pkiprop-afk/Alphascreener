@@ -182,7 +182,14 @@ def render_header_row(strategy: dict) -> None:  # sourcery skip: extract-method
                 st.rerun() # -> Rerun to reflect the new selected_ticker and shows results immediately
 
 def render_control_strip() -> None:
-    st.subheader
+    st.subheader("Strategy")
+    
+    with st.container(border=True):
+        library = load_strategy_library()
+        saved_model_names = [item.get("name", "Unnamed") for item in library] or [DEFAULT_STRATEGY["name"]]
+        model_names = [NEW_MODEL_OPTION] + [name for name in saved_model_names if name != NEW_MODEL_OPTION]
+        if st.session_state.selected_model_name not in model_names:
+            st.session_state
 
 @st.cache_data(show_spinner="Analyzing ticker data...")
 def get_sticker_analysis():
