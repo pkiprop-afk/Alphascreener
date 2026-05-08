@@ -218,7 +218,7 @@ def render_control_strip(strategy: dict) -> None:
             st.number_input(
                 "Ticker to Scan",
                 min_value=10,
-                max_value=len(load_ticker_universe()),
+                max_value=max(10, len(load_ticker_universe())),
                 step=10,
                 key="universe_size",
                 help="Number of tickers from the universe to screen.",
