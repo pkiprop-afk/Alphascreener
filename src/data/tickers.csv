@@ -7,3 +7,11 @@ META, Meta Platforms Inc.
 GOOGL, Alphabet Inc. Class A
 TSLA, Tesla Inc.
 AMD, Advanced Micro Devices Inc.
+EURUSD, X, Euro / US Dollar
+GBPUSD, X, British Pound / US Dollar
+AUDUSD, X, Australian Dollar / US Dollar
+ES=F, S&P 500 E-mini Futures
+NQ=F, Nasdaq 100 E-mini Futures
+YM=F, Dow Jones E-mini Futures
+RTY=F, Russell 2000 E-mini Futures
+BTC-USD, Bitcoin
