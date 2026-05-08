@@ -337,3 +337,12 @@ def main() -> None:
     render_header_row(strategy)
     workspace = build_workspace_data(strategy)
     
+    left_col, middle_col, right_col = st.columns([1, 2.75, 1.25], gap="medium")
+    
+    with left_col:
+        render_control_strip(strategy)
+    with middle_col:
+        render_lens_panel(strategy, workspace)
+    with right_col:
+        render_analysis_panel(workspace)
+    
