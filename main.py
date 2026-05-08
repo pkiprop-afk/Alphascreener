@@ -233,6 +233,19 @@ def render_analysis_panel(workspace: dict) -> None:
         "No recent buyside or sellside sweep detected.",
     )
     
+    with st.container(border=True):
+        st.markdown("#### Paper Test Summary")
+        
+        if st.button("Run Paper Test", use_container_width=True):
+            strategy = build_focus_strategy()
+            ohlc_df = workspace.get("ohlc_df")
+            signal_df = workspace.get("full_signal_df")
+            
+            if ohlc_df is not None and not ohlc_df.empty and signal_df is not None and not signal_df.empty:
+                with st.spinner("Running Paper Test..."):
+                    risk_reward = float(strategy.get("risk_model", {}).get("risk_reward", 2.0))
+                    max_holding_bars
+    
 def render_control_strip():
     pass
 
