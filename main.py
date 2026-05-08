@@ -273,4 +273,6 @@ def main() -> None:
     st.title("")
     st.caption("")
     
-    render_header_row
+    render_header_row(strategy)
+    workspace = build_workspace_data(strategy)
+    
