@@ -202,7 +202,22 @@ def render_status_badge(label: str, active: bool, active_text: str, inactive_tex
         else:
             st.info("Inactive")
             st.caption(inactive_text)
+
+def render_analysis_panel(workspace: dict) -> None:
+    st.subheader("Analysis")
+    latest_row = workspace.get("latest_row", {})
+    paper_metrics = workspace.get("paper_metrics", {})
     
+    with st.container(border=True):
+        is_valid = "Yes" if latest_row.get("setup_valid") else "No"
+        st.metric("Latest Setup Valid?", is_valid)
+        st.caption("Is the latest bar a valid setup based on the rules?")
+    
+    st.markdown("### Status Badges")
+    render_status_badge(
+        "MSS",
+        bool(latest)
+    )
 def render_control_strip():
     pass
 
