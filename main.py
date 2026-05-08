@@ -206,7 +206,8 @@ def render_control_strip() -> None:
         st.selectbox("Model Type", options=["Scalping", "Swing", "Fractal"], key="model_type")
         
     with st.container(border=True):
-        st.markdown("### Core ICT rules")
+        st.markdown("#### Core ICT Rules")
+        st.toggle("Market Structure Shift (MSS)", key)
         
 
 @st.cache_data(show_spinner="Analyzing ticker data...")
