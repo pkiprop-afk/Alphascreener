@@ -181,6 +181,9 @@ def render_header_row(strategy: dict) -> None:  # sourcery skip: extract-method
                 st.session_state.header_run_screen = True
                 st.rerun() # -> Rerun to reflect the new selected_ticker and shows results immediately
 
+def render_control_strip():
+    pass
+
 def render_lens_panel(strategy: dict, workspace: dict):
     """ 
     """
