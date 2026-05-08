@@ -184,7 +184,18 @@ def render_header_row(strategy: dict) -> None:  # sourcery skip: extract-method
 def render_control_strip():
     pass
 
-@st.cache_data(show_spinner="Analyzing")
+@st.cache_data(show_spinner="Analyzing ticker data...")
+def get_sticker_analysis():
+    pass
+
+def build_workspace_data(strategy: dict) -> dict:
+    pass
+
+def render_signal_timeline():
+    pass
+
+def render_lens_panel():
+    pass
 
 
 def render_lens_panel(strategy: dict, workspace: dict):
