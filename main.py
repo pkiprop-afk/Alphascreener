@@ -266,4 +266,11 @@ def render_analysis_panel(workspace: dict) -> None:
     
 def main() -> None:
     st.set_page_config(page_title="", page_icon="", layout="wide")
+    initialize_session_state()
     
+    strategy = build_focus_strategy()
+    
+    st.title("")
+    st.caption("")
+    
+    render_header_row
