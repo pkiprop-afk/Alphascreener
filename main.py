@@ -223,6 +223,12 @@ def render_control_strip() -> None:
                 key="universe_size",
                 help="Number of tickers from the universe to screen.",
             )
+    
+    with st.container(border=True):
+        st.markdown("#### Model Actions")
+        if st.button("Save Current Model", use_container_width=True):
+            save_or_update_strategy(STRATEGIES_PATH, strategy)
+    
 @st.cache_data(show_spinner="Analyzing ticker data...")
 def get_sticker_analysis():
     pass
