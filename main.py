@@ -26,6 +26,9 @@ from src.lib.storage import(
     save_or_update_strategy
 )
 
+from src.lib.tradingview_widget import render_tradingview_widget
+
+
 DATA_DIR = os.path.join(APP_PATH, "data")
 STRATEGIES_PATH = os.path.join(DATA_DIR, "strategies.json")
 TICKERS_PATH = os.path.join(DATA_DIR, "tickers.csv")
