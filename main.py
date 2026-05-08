@@ -353,3 +353,5 @@ def main() -> None:
     with right_col:
         render_analysis_panel(workspace)
     
+if __name__ == "__main__":
+    main()
