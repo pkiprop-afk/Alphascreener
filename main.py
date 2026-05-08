@@ -35,7 +35,7 @@ TICKERS_PATH = os.path.join(DATA_DIR, "tickers.csv")
 NEW_MODEL_OPTION = "+ Create New Model"
 
 @st.cache_data
-def load_sticker_universe() -> list[str]:
+def load_ticker_universe() -> list[str]:
     if not os.path.exists(TICKERS_PATH):
         return []
     ticker_df = pd.read_csv(TICKERS_PATH)
@@ -218,7 +218,7 @@ def render_control_strip() -> None:
             st.number_input(
                 "Ticker to Scan",
                 min_value=10,
-                max_value=len(load_sticker_universe)
+                max_value=len(load_ticker_universe)
             )
 @st.cache_data(show_spinner="Analyzing ticker data...")
 def get_sticker_analysis():
