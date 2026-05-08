@@ -204,6 +204,7 @@ def render_status_badge(label: str, active: bool, active_text: str, inactive_tex
             st.caption(inactive_text)
 
 def render_analysis_panel(workspace: dict) -> None:
+    # sourcery skip: extract-method
     st.subheader("Analysis")
     latest_row = workspace.get("latest_row", {})
     paper_metrics = workspace.get("paper_metrics", {})
