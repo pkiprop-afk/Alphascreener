@@ -189,7 +189,22 @@ def render_control_strip() -> None:
         saved_model_names = [item.get("name", "Unnamed") for item in library] or [DEFAULT_STRATEGY["name"]]
         model_names = [NEW_MODEL_OPTION] + [name for name in saved_model_names if name != NEW_MODEL_OPTION]
         if st.session_state.selected_model_name not in model_names:
-            st.session_state
+            st.session_state.selected_model_name = model_names[1] if len(model_names) > 1 else NEW_MODEL_OPTION
+
+        top_a, top_b = st.columns([3, 1])
+        with top_a:
+            st.selectbox(
+                "Model",
+                options=model_names,
+                key="selected_model_name",
+                on_change=sync_selected_model,
+            )
+        with top_b:
+            st.write("")
+            st.button("New Model", use_container_width=True, on_click=create_new_model)
+        st.text_input("Model Name", key="model_name_input")
+        st.selectbox("Model Type", options=["Scalping", "Swing", "Fractal"])
+        
 
 @st.cache_data(show_spinner="Analyzing ticker data...")
 def get_sticker_analysis():
