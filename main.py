@@ -233,7 +233,7 @@ def render_control_strip(strategy: dict) -> None:
         st.caption("This panel owns the active rule set and persists models without changing the backend logic.")
     
 @st.cache_data(show_spinner="Analyzing ticker data...")
-def get_sticker_analysis(ticker: str, interval: str, _strategy_json: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+def get_ticker_analysis(ticker: str, interval: str, _strategy_json: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     strategy = json.loads(_strategy_json)
     ohlc_df = fetch_history_for_sticker(ticker, interval=interval)
     if ohlc_df.empty:
@@ -257,7 +257,26 @@ def build_workspace_data(strategy: dict) -> dict:
         "paper_metrics": st.session_state.get("paper_test_result", {}),
         "screen_results": st.session_state.scanner_results,
     }
+    
+    try:
+        strategy_json = json.dumps(strategy, sort_keys=True)
+        ohlc_df, enriched_df, signal_df = get_ticker_analysis(ticker, interval, strategy_json)
 
+        workspace["ohlc_df"] = ohlc_df
+        workspace["enriched_df"] = enriched_df
+        workspace["full_signal_df"] = signal_df
+        
+        if not signal_df.empty:
+            workspace["signal_df"] = signal_df.tail(12).copy()
+            latest_row = signal_df.iloc[-1].to_dict()
+            workspace["latest_row"] = latest_row
+            st.session_state.signal_timeline = workspace["signal_df"]
+    
+    except Exception as exc:
+        st.warning(f"Could not build workspace data for {ticker}: {exc}")
+    
+    return workspace
+        
 def render_signal_timeline():
     pass
 
