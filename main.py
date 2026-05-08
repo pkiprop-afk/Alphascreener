@@ -228,7 +228,7 @@ def render_control_strip(strategy: dict) -> None:
         st.markdown("#### Model Actions")
         if st.button("Save Current Model", use_container_width=True):
             save_or_update_strategy(STRATEGIES_PATH, strategy)
-            st.success(f"Saved model: {strategy["name"]}")
+            st.success(f"Saved model: {strategy['name']}")
             load_strategy_library.clear()
         st.caption("This panel owns the active rule set and persists models without changing the backend logic.")
     
