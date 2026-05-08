@@ -209,7 +209,7 @@ def render_control_strip() -> None:
         st.markdown("#### Core ICT Rules")
         st.toggle("Market Structure Shift (MSS)", key="require_structure_shift")
         st.toggle("Fair Value Gap (FVG)", key="require_fvg")
-        st.toggle("Change in State of Delivery (CISF)")
+        st.toggle("Change in State of Delivery (CISD)", key="require_cisd")
         
 
 @st.cache_data(show_spinner="Analyzing ticker data...")
