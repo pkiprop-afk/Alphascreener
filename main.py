@@ -255,9 +255,7 @@ def build_workspace_data(strategy: dict) -> dict:
         "full_signal_df": pd.DataFrame(),
         "latest_row": {},
         "paper_metrics": st.session_state.get("paper_test_result", {}),
-        "screen_results": st.session_state
-        
-        
+        "screen_results": st.session_state.scanner_results,
     }
 
 def render_signal_timeline():
