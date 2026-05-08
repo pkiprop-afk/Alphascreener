@@ -279,13 +279,6 @@ def build_workspace_data(strategy: dict) -> dict:
         
 def render_signal_timeline():
     pass
-def render_signal_timeline(signal_df: pd.DataFrame) -> None:
-    """Renders the signal timeline dataframe."""
-    st.markdown("#### Signal Timeline")
-    if not signal_df.empty:
-        st.dataframe(signal_df, use_container_width=True, hide_index=True)
-    else:
-        st.info("No signals found for the current ticker and strategy.")
 
 def render_lens_panel(strategy: dict, workspace: dict):
     """ 
@@ -298,7 +291,6 @@ def render_lens_panel(strategy: dict, workspace: dict):
         render_tradingview_widget(ticker, interval=tv_interval, height=500)
     with st.container(border=True):
         render_signal_timeliine(workspace["signal_df"])
-        render_signal_timeline(workspace["signal_df"])
 
 def render_status_badge(label: str, active: bool, active_text: str, inactive_text: str) -> None:
     with st.container(border=True):
