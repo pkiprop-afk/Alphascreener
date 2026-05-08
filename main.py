@@ -256,7 +256,8 @@ def render_analysis_panel(workspace: dict) -> None:
         col_a, col_b = st.columns(2)
         col_a.metric("Win Rate", paper_metrics.get("win_rate", "N/A"))
         col_b.metric("Total R", paper_metrics.get("total_r", "N/A"))
-        st.caption("Click button to run a backtest on the full history for this ticker")
+        st.caption("Click button to run a backtest on the full history for this ticker.")
+    
     
 def render_control_strip():
     pass
