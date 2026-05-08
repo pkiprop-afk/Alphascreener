@@ -190,6 +190,9 @@ def render_lens_panel(strategy: dict, workspace: dict):
     tv_interval = INTERVAL_TRADINGVIEW_MAP.get(app_interval, "D")
     with st.container(border=True):
         render_tradingview_widget(ticker, interval=tv_interval, height=500)
+    with st.container(border=True):
+        render_signal_timeliine(workspace["signal_df"])
+        
 def render_control_strip():
     pass
 
