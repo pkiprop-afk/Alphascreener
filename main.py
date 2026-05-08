@@ -203,7 +203,10 @@ def render_control_strip() -> None:
             st.write("")
             st.button("New Model", use_container_width=True, on_click=create_new_model)
         st.text_input("Model Name", key="model_name_input")
-        st.selectbox("Model Type", options=["Scalping", "Swing", "Fractal"])
+        st.selectbox("Model Type", options=["Scalping", "Swing", "Fractal"], key="model_type")
+        
+    with st.container(border=True):
+        st.markdown("### Core ICT rules")
         
 
 @st.cache_data(show_spinner="Analyzing ticker data...")
