@@ -247,6 +247,16 @@ def build_workspace_data(strategy: dict) -> dict:
     ticker = st.session_state.selected_ticker
     interval = strategy.get("timeframe", "1d")
     
+    if not ticker:
+        return {
+            "ticker":"None",
+            "ohlc_df": pd.DataFrame(),
+            "enriched_df": pd.DataFrame(),
+            "signal_df": pd.DataFrame(),
+            "full_signal_df": pd.DataFrame(),
+            "latest_row": {},
+            "paper_metrics": {},
+        }
     workspace = {
         "ticker": ticker,
         "ohlc_df": pd.DataFrame(),
