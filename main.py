@@ -213,7 +213,8 @@ def render_control_strip() -> None:
     
     with st.container(border=True):
         with st.expander("Risk & Scan  Settings", expanded=False):
-            st.number_input("Risk / Reward Ratio", min_value=1.0, max_value=10.0, step=0.5, key="max_holding_bars")
+            st.number_input("")
+            st.number_input("Max", min_value=1.0, max_value=10.0, step=0.5, key="max_holding_bars")
 
 @st.cache_data(show_spinner="Analyzing ticker data...")
 def get_sticker_analysis():
