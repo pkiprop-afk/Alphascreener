@@ -244,7 +244,21 @@ def get_sticker_analysis(ticker: str, interval: str, _strategy_json: str) -> tup
     return ohlc_df, enriched_df, signal_df
 
 def build_workspace_data(strategy: dict) -> dict:
-    pass
+    ticker = st.session_state.selected_sticker
+    interval = strategy.get("timeframe", "1d")
+    
+    workspace = {
+        "ticker": ticker,
+        "ohlc_df": pd.DataFrame(),
+        "enriched_df": pd.DataFrame(),
+        "signal_df": pd.DataFrame(),
+        "full_signal_df": pd.DataFrame(),
+        "latest_row": {},
+        "paper_metrics": st.session_state.get("paper_test_result", {}),
+        "screen_results": st.session_state
+        
+        
+    }
 
 def render_signal_timeline():
     pass
