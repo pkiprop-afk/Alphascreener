@@ -244,7 +244,14 @@ def render_analysis_panel(workspace: dict) -> None:
             if ohlc_df is not None and not ohlc_df.empty and signal_df is not None and not signal_df.empty:
                 with st.spinner("Running Paper Test..."):
                     risk_reward = float(strategy.get("risk_model", {}).get("risk_reward", 2.0))
-                    max_holding_bars
+                    max_holding_bars = int(strategy.get("risk_model", {}).get("max_holding_bars", 12))
+                    _, summary = run_backtest_from_signals(
+                        ohlc_df, signal_df, risk_reward=risk_reward, max_holding_bars=max_holding_bars
+                    )
+                    st.session_state.paper_test_result = summary
+                    st.rerun()
+            else:
+                st.warning("Not enough data to run paper test.")
     
 def render_control_strip():
     pass
