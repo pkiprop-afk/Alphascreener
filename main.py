@@ -264,4 +264,6 @@ def render_analysis_panel(workspace: dict) -> None:
             st.markdown("### Screen Results")
             st.dataframe(workspace["screen_results"].head(5), hide_index=True, use_container_width=True)
     
-
+def main() -> None:
+    st.set_page_config(page_title="", page_icon="", layout="wide")
+    
