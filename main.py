@@ -218,7 +218,10 @@ def render_control_strip() -> None:
             st.number_input(
                 "Ticker to Scan",
                 min_value=10,
-                max_value=len(load_ticker_universe)
+                max_value=len(load_ticker_universe()),
+                step=10,
+                key="universe_size",
+                help="Number of tickers from the universe to screen.",
             )
 @st.cache_data(show_spinner="Analyzing ticker data...")
 def get_sticker_analysis():
