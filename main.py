@@ -210,7 +210,10 @@ def render_control_strip() -> None:
         st.toggle("Market Structure Shift (MSS)", key="require_structure_shift")
         st.toggle("Fair Value Gap (FVG)", key="require_fvg")
         st.toggle("Change in State of Delivery (CISD)", key="require_cisd")
-        
+    
+    with st.container(border=True):
+        with st.expander("Risk & Scan  Settings", expanded=False):
+            st.number_input("Risk / Reward Ratio", min_value=1.0, max_value=10.0, step=0.5, key="max_holding_bars")
 
 @st.cache_data(show_spinner="Analyzing ticker data...")
 def get_sticker_analysis():
