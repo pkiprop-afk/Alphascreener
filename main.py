@@ -178,6 +178,15 @@ def render_header_row(strategy: dict) -> None:  # sourcery skip: extract-method
                 st.session_state.header_run_screen = True
                 st.rerun() # -> Rerun to reflect the new selected_ticker and shows results immediately
 
+def render_lens_panel(strategy: dict, workspace: dict):
+    """ 
+    """
+    st.subheader("Trade Setup")
+    ticker = workspace["ticker"]
+    app_interval = strategy.get("timeframe", "1d")
+    tv_interval = INTERVAL_TRADINGVIEW_MAP.get(app_interval, "D")
+    with st.container(border=True):
+        render_tradingview_widget(ticker, interval=tv_interval, height=500)
 def render_control_strip():
     pass
 
