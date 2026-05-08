@@ -282,7 +282,19 @@ def render_signal_timeline(signal_df: pd.DataFrame) -> None:
     if signal_df is None or signal_df.empty:
         st.info("No recent signals to display yet.")
         return
-    display_df = signal_df.copy().reset
+    display_df = signal_df.copy().reset_index().rename(columns={"timestamp":"datetime"})
+    display_columns = [
+        col for col in [
+            "datetime",
+            "bullish_structure_shift",
+            "bearish_structure_shift",
+            "bullish_cisd",
+            "bearish_cisd",
+            "bullish_fvg",
+            "bearish_fvg",
+            
+        ]
+    ]
 
 def render_lens_panel(strategy: dict, workspace: dict):
     """ 
