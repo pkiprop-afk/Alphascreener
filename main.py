@@ -256,6 +256,7 @@ def build_workspace_data(strategy: dict) -> dict:
             "full_signal_df": pd.DataFrame(),
             "latest_row": {},
             "paper_metrics": {},
+            "screen_results": pd.DataFrame(),
         }
     workspace = {
         "ticker": ticker,
