@@ -33,4 +33,4 @@ The workflow is simple. A user selects a ticker, chooses or creates a model, ena
 | Screen Results | Shows matching tickers after running the scanner across the configured universe. |
 
 ## 2. Core Features
-AlphaLens is organized around transparency. 
+AlphaLens is organized around transparency. Instead of only producing a final **buy** or **sell**
