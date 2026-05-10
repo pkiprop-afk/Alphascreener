@@ -21,3 +21,13 @@ The project is built as a practical research dashboard. Its central purpose is t
 AlphaLens brings together market data retrieval, ICT-inspired signal generation, and interactive strategy controls inside a single Streamlit dashboard. Streamlit is a Python framework for building interactive data applications, while the app currently uses **yfinance** to retrieve historical market data from Yahoo finance and **pandas** to structure and transform the resulting datasets.
 
 The workflow is simple. A user selects a ticker, chooses or creates a model, enables the ICT conditions required by that model, and reviews whether recent candles satisfy the selected setup rules. The app can also scan a ticker universe and surface symbols whose latest bar matches the selected configuration.
+
+| Area | Purpose |
+| --- | --- |
+| Ticker Search | Selects the active ticker from `src/data/tickers.csv`. |
+| Strategy Panel | Controls model name, model type, required ICT rules, risk/reward, holding period, and scan size. |
+| TradingView Lens | Embeds a TradingView chart for visual price inspection. |
+| Signal Timeline | Displays the most recent signal states as a candle-by-candle checklist. |
+| Status Badges | Summarizes whether the latest candle has active MSS, FVG, and liquidity sweep context. |
+| Paper Test Summary | Runs a lightweight historical test using generated setup signals. |
+| Screen Results | Shows matching tickers after running the scanner across the configured universe. |
