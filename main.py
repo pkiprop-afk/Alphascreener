@@ -43,6 +43,7 @@ def load_ticker_universe() -> list[str]:
         return []
     return ticker_df["ticker"].dropna().astype(str).str.upper().tolist()
 
+@st.cache_data
 def load_strategy_library() -> list[dict]:
     return load_json_file(STRATEGIES_PATH, default=[DEFAULT_STRATEGY])
 
