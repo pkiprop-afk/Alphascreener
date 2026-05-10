@@ -81,4 +81,7 @@ The table can look sparse because these are event-driven signals. A moving avera
 | `src/data/strategies.json` | Saved model definitions and rule settings. |
 | `src/data/tickers.csv` | Ticker universe used by the search box and scanner. |
 
+## 6. Installation
+pip install -r requirements.txt
+
 
