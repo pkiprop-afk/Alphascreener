@@ -136,4 +136,6 @@ This testing workflow should be treated as a research aid. **It does not include
 | Deployment | Add a deployment guide for Streamlit Community Cloud or another hosting option. |
 
 ## 11. Disclaimer
-AlphaLens is a researcher and educational tool. **It should not be interpreted as financial, investment, trading, tax, or legal advice. Market data may be delayed, incomplete, or inaccurate, and technical signals can fail in live market conditions. Always conduct independent research and apply appropriate risk management 
+AlphaLens is a researcher and educational tool. **It should not be interpreted as financial, investment, trading, tax, or legal advice. Market data may be delayed, incomplete, or inaccurate, and technical signals can fail in live market conditions. Always conduct independent research and apply appropriate risk management.**
+
+ 
