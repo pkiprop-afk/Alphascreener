@@ -128,7 +128,7 @@ def add_to_watchlist(file_path: str, ticker: str, notes: str, strategy_name: str
     now = timestamp_now()
     
     # Updates the entry if the ticker exists, otherwise append a new entry
-    existing = next((item for item in watchlist if item.get("ticeker") == ticker), None)
+    existing = next((item for item in watchlist if item.get("ticker") == ticker), None)
     if existing:
         existing["notes"] = notes
         existing["strategy_name"] = strategy_name
