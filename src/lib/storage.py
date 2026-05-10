@@ -132,7 +132,7 @@ def add_to_watchlist(file_path: str, ticker: str, notes: str, strategy_name: str
     if existing:
         existing["notes"] = notes
         existing["strategy_name"] = strategy_name
-        existing["updated_at"]
+        existing["updated_at"] = now
     else:
         watchlist.append(
             {
