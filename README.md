@@ -46,4 +46,15 @@ AlphaLens is organized around transparency. Instead of only producing a final **
 | Local persistence | Strategies, ticker lists, watchlists, and backtest data are stored locally under the repository data folders. |
 
 ## 3. How the Signal Engine Works
-The signal engine starts by downloading OHLCV data for the selected ticker. The app then applies a sequence of transformations that add technical context to each candle. These enriched rows are converted into a signal table, where each row represents one timestamp and each signal column represents one timestamp
+The signal engine starts by downloading OHLCV data for the selected ticker. The app then applies a sequence of transformations that add technical context to each candle. These enriched rows are converted into a signal table, where each row represents one timestamp and each signal column represents one timestamp andd each signal column represents whether a specific condition was true on that candle
+
+| Step | Function | Output |
+| --- | --- | --- |
+| Fetch history | `fetch_history_for_sticker()` | Downloads and cleans Open, High, Low, Close, and Volume data. |
+| Detect swings | `detect_swings()` | Marks swing highs and swing lows using a configurable swing window. |
+| Detect structure shift | `detect_structure_shift()` | Adds bullish and bearish market-structure shift flags. |
+| Detect liquidity sweep | `detect_external_liquidity_sweep()` | Marks candles that sweep prior swing high or low liquidity. |
+| Detect CISD | `detect_cisd()` | Marks bullish or bearish change in state of delivery. |
+| Detect FVG zones | `detect_fvg_zones()` | Marks bullish and bearish fair value gaps. |
+| Add liquidity context | `add_liquidity_context()` | Adds internal and external liquidity touch context. |
+| Evaluate setup | `evaluate_bar_setup()` | Combines strategy requirements into `trade_side` and `setup_valid`. |
