@@ -46,3 +46,4 @@ AlphaLens is organized around transparency. Instead of only producing a final **
 | Local persistence | Strategies, ticker lists, watchlists, and backtest data are stored locally under the repository data folders. |
 
 ## 3. How the Signal Engine Works
+The signal engine starts by downloading OHLCV data for the selected ticker. The app then applies a sequence of transformations that add technical context to each candle. These enriched rows are converted into
