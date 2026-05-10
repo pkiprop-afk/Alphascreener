@@ -345,7 +345,14 @@ def render_status_badge(label: str, active: bool, active_text: str, inactive_tex
 
 def render_analysis_panel(workspace: dict) -> None:
     """ 
-    
+    Render the analysis panel summarizing the latest setup, status badges, and paper test results.
+    This function presents a compact dashboard view of signal validity, model condition flags, and backtest performance metrics.
+
+    Args:
+        workspace: Dictionary of precomputed data for the currently selected ticker, including latest signals, paper test metrics, and screen results.
+
+    Returns:
+        None. The function renders Streamlit components in place to visualize analysis outputs for the active strategy and ticker.
     """
     st.subheader("Analysis")
     latest_row = workspace.get("latest_row", {})
