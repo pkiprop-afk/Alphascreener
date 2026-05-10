@@ -158,7 +158,7 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
             {
                 **evaluation,
                 "timestamp": signal_df.index[idx],
-                "open": float(row["Open"]),
+                "Open": float(row["Open"]),
                 "High": float(row["High"]),
                 "Low": float(row["Low"]),
                 "Close": float(row["Close"]),
