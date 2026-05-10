@@ -101,6 +101,15 @@ pip install -r requirements.txt
 
 The app will open in the browser. From there, select a ticker, review the chart, adjust the active model, and inspect the Signal Timeline and analysis panel.
 
-## 
+## 8. Configuration and Data Files
+
+The app persists its local configuration in JSON and CSV files. This makes it easy to edit strategies directly, version-control model changes, and expand the ticker universe.
+
+| Data File | Description |
+| --- | --- |
+| `src/data/strategies.json` | Stores saved strategy models, including entry rules, risk settings, filters, and metadata. |
+| `src/data/tickers.csv` | Stores the ticker universe used by ticker search and screening. |
+| `src/data/watchlist.json` | Stores locally tracked watchlist symbols. |
+| `src/data/backtest_results.json` | Stores or reserves space for paper-test output records. |
 
 
