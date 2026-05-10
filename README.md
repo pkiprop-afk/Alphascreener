@@ -126,6 +126,14 @@ The paper-testing module uses the generated signal table and enters trades from 
 This testing workflow should be treated as a research aid. **It does not include all real-world trading factors such as fees, slippage, spread, liquidity constraints, changing market regimes, or execution quality.**
 
 ## 10. Development Notes
-Th
+
+| Improvement Area | Suggested Direction |
+| --- | --- |
+| Signal accuracy | Add unit tests for structure shifts, CISD, FVG detection, and liquidity sweeps using small handcrafted OHLC datasets. |
+| Timeline clarity | Distinguish between first-time event triggers and continuing conditions so structure-shift rows do not appear overly repetitive. |
+| Backtest robustness | Add fees, slippage, position sizing, and long/short-specific performance breakdowns. |
+| Data reliability | Add error handling for missing ticker data, API failures, and empty downloaded datasets. |
+| Documentation | Add screenshots, example strategies, and a walkthrough of one complete setup from signal timeline to paper test. |
+| Deployment | Add a deployment guide for Streamlit Community Cloud or another hosting option. |
 
 
