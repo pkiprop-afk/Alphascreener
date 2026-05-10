@@ -36,6 +36,13 @@ NEW_MODEL_OPTION = "+ Create New Model"
 
 @st.cache_data
 def load_ticker_universe() -> list[str]:
+    """ 
+    Load the configured ticker universe from the CSV data file.
+    This function reads and normalizes ticker symbols to a consistent uppercase list suitable for use in selection widgets and scanners.
+
+    Returns:
+        A list of ticker symbols as uppercase strings, or an empty list if the file is missing or malformed.
+    """
     if not os.path.exists(TICKERS_PATH):
         return []
     ticker_df = pd.read_csv(TICKERS_PATH)
