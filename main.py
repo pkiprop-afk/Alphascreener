@@ -183,6 +183,9 @@ def render_header_row(strategy: dict) -> None:  # sourcery skip: extract-method
                 st.rerun() # -> Rerun to reflect the new selected_ticker and shows results immediately
 
 def render_control_strip(strategy: dict) -> None:  
+    """ 
+    
+    """
     st.subheader("Strategy")
     
     with st.container(border=True):
