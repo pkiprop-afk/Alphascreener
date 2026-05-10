@@ -255,6 +255,16 @@ def get_ticker_analysis(ticker: str, interval: str, _strategy_json: str) -> tupl
     return ohlc_df, enriched_df, signal_df
 
 def build_workspace_data(strategy: dict) -> dict:
+    """ 
+    Build the data workspace for the currently selected ticker and strategy.
+    This function assembles price history, enriched signal data, latest setup context, and cached metrics into a single dictionary for downstream views.
+
+    Args:
+        strategy: Strategy configuration dict whose timeframe and rules guide data fetching and signal computation.
+
+    Returns:
+        A dictionary containing ticker identifier, OHLC data, enriched ICT signals, recent signal subset, latest-row metadata, paper test metrics, and any screen results.
+    """
     ticker = st.session_state.selected_ticker
     interval = strategy.get("timeframe", "1d")
     
