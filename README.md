@@ -138,14 +138,12 @@ This testing workflow should be treated as a research aid. **It does not include
 ## 11. Learning Resources
 | Resource | Format | Why It Is Relevant |
 | --- | --- | --- |
-| [Streamlit Tutorials](https://docs.streamlit.io/develop/tutorials) | Official documentation | This is the best starting point for learning Streamlit through step-by-step examples covering app structure, data connections, UI elements, execution flow, and deployment.[4] |
-| [Create an App — Streamlit Docs](https://docs.streamlit.io/get-started/tutorials/create-an-app) | Official tutorial | This tutorial explains how to fetch data into a Pandas dataframe, cache data with `st.cache_data`, display raw data, build charts, and add widgets such as sliders and checkboxes.[5] |
 | [Streamlit Crash Course: From Zero to Data App](https://www.youtube.com/watch?v=d7fnzDQ5qM8) | YouTube video | This official Streamlit video is a practical beginner crash course for turning Python into a working data app.[6] |
 | [Streamlit STOCK Dashboard Using Python](https://www.youtube.com/watch?v=fdFfpEtv5BU) | YouTube video | This tutorial is close to the project’s market-data angle because it shows how to build a stock dashboard with Streamlit and Python.[7] |
 | [Build a Financial Dashboard in Streamlit with yfinance](https://softhints.com/build-a-financial-dashboard-in-streamlit-step-by-step-guide-with-yfinance/) | Written tutorial | This article walks through a financial dashboard with Streamlit, yfinance, ticker input, KPI cards, and price charts, which directly overlaps with this project’s dashboard foundation.[8] |
 | [Create Your Own Stock Market Dashboard with Streamlit and Yfinance](https://www.youtube.com/watch?v=qepyM8VHj9s) | YouTube video | This is another project-style walkthrough showing how Streamlit and yfinance can be combined into a stock-market dashboard.[9] |
 
-## 11. AI Assistance
+## 12. AI Assistance
 | AI Contribution Area | How AI Helped | Why It Was Useful |
 | --- | --- | --- |
 | Code review | Helped identify repeated logic and places where the code could become more DRY, meaning easier to maintain by reducing unnecessary repetition. | This supports cleaner modules and lowers the chance that the same logic has to be fixed in multiple places later. |
@@ -154,7 +152,7 @@ This testing workflow should be treated as a research aid. **It does not include
 | Project outline | Helped organize the application into understandable sections such as market data, ICT structure logic, delivery-state logic, FVG logic, storage, and paper testing. | A clearer outline makes the repository more professional and easier to expand. |
 | Future improvement planning | Helped identify next-step improvements such as tests, clearer event-versus-context labeling, better backtest assumptions, and stronger data-error handling. | This creates a roadmap for improving the product efficiently instead of adding features randomly. |
 
-## 12. Disclaimer
+## 13. Disclaimer
 AlphaLens is a researcher and educational tool. **It should not be interpreted as financial, investment, trading, tax, or legal advice. Market data may be delayed, incomplete, or inaccurate, and technical signals can fail in live market conditions. Always conduct independent research and apply appropriate risk management.**
 
  
