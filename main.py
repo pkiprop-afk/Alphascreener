@@ -192,7 +192,7 @@ def render_control_strip(strategy: dict) -> None:
         if st.session_state.selected_model_name not in model_names:
             st.session_state.selected_model_name = model_names[1] if len(model_names) > 1 else NEW_MODEL_OPTION
 
-        top_a, top_b = st.columns([2, 1])
+        top_a, top_b = st.columns([1, 1])
         with top_a:
             st.selectbox(
                 "Model",
