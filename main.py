@@ -184,7 +184,14 @@ def render_header_row(strategy: dict) -> None:  # sourcery skip: extract-method
 
 def render_control_strip(strategy: dict) -> None:  
     """ 
-    
+    Render the strategy configuration control panel for defining the active model.
+    The function exposes controls for selecting, editing, and saving strategy templates as well as tuning core rules and scan scope.
+
+    Args:
+        strategy: Strategy configuration dict representing the current focus model to be saved or adjusted.
+
+    Returns:
+        None. The function wires Streamlit widgets to session state, enabling users to manage models and risk/scan parameters interactively
     """
     st.subheader("Strategy")
     
