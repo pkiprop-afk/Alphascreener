@@ -245,6 +245,18 @@ def render_control_strip(strategy: dict) -> None:
     
 @st.cache_data(show_spinner="Analyzing ticker data...")
 def get_ticker_analysis(ticker: str, interval: str, _strategy_json: str) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """ 
+    Fetch and compute the core analysis inputs for a given ticker and strategy.
+    This function retrieves OHLC history, enriches it with ICT signals, and builds a signal table ready for downstream views.
+
+    Args:
+        ticker: Symbol identifier to analyze, matching entries in the configured ticker universe.
+        interval: Timeframe string used when requesting historical data, aligned with application-level timeframe settings.
+        _strategy_json: JSON-serialized strategy configuration that drives signal enrichment and filtering logic.
+
+    Returns:
+        A tuple containing the raw OHLC DataFrame, the enriched DataFrame with ICT signals, and the final signal table DataFrame.
+    """
     strategy = json.loads(_strategy_json)
     ohlc_df = fetch_history_for_sticker(ticker, interval=interval)
     if ohlc_df.empty:
