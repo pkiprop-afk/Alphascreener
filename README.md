@@ -120,4 +120,7 @@ A strategy model contains three main sectors. The **entry_model** defines which 
 | `risk_model` | `risk_reward`, `max_holding_bars`, `stop_type`, `target_type` | Determines how the paper test estimates exits and results. |
 | `filters` | `swing_window`, `liquidity_lookback`, `fvg_min_pct`, `min_displacement_pct` | Controls how sensitive the signal-detection logic is. |
 
+## 9. Paper Testing
+The paper-testing module uses the generated signal table and enters trades from rows where **setup_valid** is **True**. It then evaluates future candles using a target, stop, and maximum holding period. The summary panel currently reports win rate and total R, which are useful first-pass metrics for comparing model configuration
+
 
