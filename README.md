@@ -67,3 +67,18 @@ This is why the timeline appears as a checkbox-style grid. Each checkbox is simp
 The table can look sparse because these are event-driven signals. A moving average has a value on every candle, but liquidity sweep, CISD event, fair value gap, or structure shift only appears when the underlying rule is triggered.
 
 ## 5. Project Structure
+| File | Role |
+| --- | --- |
+| `main.py` | Streamlit UI, session state, model controls, chart panel, timeline, scanner, and paper-test panel. |
+| `src/lib/market_data.py` | Market data retrieval, signal-table construction, setup evaluation, and ticker scanning. |
+| `src/lib/ict_structure.py` | Swing detection, structure-shift detection, and external liquidity sweep detection. |
+| `src/lib/ict_delivery.py` | Candle pattern classification and CISD detection. |
+| `src/lib/ict_fvg.py` | Fair value gap detection and FVG touch helpers. |
+| `src/lib/ict_liquidity.py` | Internal and external liquidity context. |
+| `src/lib/paper_test.py` | Historical paper-test workflow based on valid setup rows. |
+| `src/lib/storage.py` | JSON and CSV persistence helpers for strategies, watchlists, and results. |
+| `src/lib/tradingview_widget.py` | Embedded TradingView chart component. |
+| `src/data/strategies.json` | Saved model definitions and rule settings. |
+| `src/data/tickers.csv` | Ticker universe used by the search box and scanner. |
+
+
