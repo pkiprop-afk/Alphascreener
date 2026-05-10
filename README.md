@@ -18,4 +18,4 @@ The project is built as a practical research dashboard. Its central purpose is t
 ### 12. Disclaimer
 
 ## 1. Overview  
-AlphaLens brings together market data retrieval, ICT-inspired signal generation, and interactive strategy controls inside a single  
+AlphaLens brings together market data retrieval, ICT-inspired signal generation, and interactive strategy controls inside a single Streamlit dashboard. Streamlit is a Python framework for building interactive data applications, while the app currently uses *yfinance*    
