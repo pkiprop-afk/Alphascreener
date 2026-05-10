@@ -83,7 +83,11 @@ The table can look sparse because these are event-driven signals. A moving avera
 
 ## 6. Installation
 
-'pip install -r requirements.txt'
+git clone https://github.com/pkiprop-afk/Alphascreener.git
+cd Alphascreener
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 
 | Package | Purpose |
 | --- | --- |
@@ -95,7 +99,7 @@ The table can look sparse because these are event-driven signals. A moving avera
 
 `streamlit run main.py`
 
-The app will open 
+The app will open in the browser. From there, select a ticker, review the chart, adjust the active model, and inspect the Signal Timeline and analysis panel.
 
 ## 
 
