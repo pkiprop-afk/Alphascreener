@@ -64,4 +64,6 @@ The Signal Timeline is a recent-bar diagnostic view. In the current implementati
 
 This is why the timeline appears as a checkbox-style grid. Each checkbox is simply visual representation of a Python boolean value. A checked box means the condition was **True** for that candle, while an empty box means the condition was **False**.
 
+The table can look sparse because these are event-driven signals. A moving average has a value on every candle, but liquidity sweep, CISD event, fair value gap, or structure shift only appears when the underlying rule is triggered.
+
 ## 5. Project Structure
