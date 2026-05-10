@@ -3,3 +3,9 @@ AlphaLens is a Streamlit-based market screening and trade setup research tool de
 
 The project is built as a practical research dashboard. Its central purpose is to make the reasoning behind a potential setup visible through a TradingView chart, a signal timeline, status badges, scanner results, and a lightweight paper-testing workflow
 
+# Table of Contents
+### 1. Overview
+### 2. Core Features
+### 3. How the Signal Engine Works
+### 4. Signal Timeline Explained
+### 5. Project Structure
