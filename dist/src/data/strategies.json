@@ -3,7 +3,7 @@
     "name": "ICT Reversal Starter",
     "market": "futures",
     "timeframe": "1d",
-    "model_type": "swing",
+    "model_type": "Scalping",
     "entry_model": {
       "require_structure_shift": true,
       "require_cisd": true,
@@ -24,6 +24,7 @@
       "fvg_min_pct": 0.001,
       "min_displacement_pct": 0.002,
       "max_bars_after_sweep": 6
-    }
+    },
+    "updated_at": "2026-05-10T15:47:14"
   }
 ]
