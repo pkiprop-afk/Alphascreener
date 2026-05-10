@@ -161,7 +161,7 @@ def build_signal_table(signal_df: pd.DataFrame, strategy: dict) -> pd.DataFrame:
                 "open": float(row["Open"]),
                 "High": float(row["High"]),
                 "Low": float(row["Low"]),
-                "Close": float(row["Close]"]),
+                "Close": float(row["Close"]),
                 "previous_swing_high": row.get("previous_swing_high"), # -> Swing high/low
                 "previous_swing_low": row.get("previous_swing_low"),
                 "bullish_structure_shift": bool(row.get("bullish_structure_shift", False)), # -> Structure shift
