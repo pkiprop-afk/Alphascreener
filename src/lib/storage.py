@@ -8,7 +8,7 @@ DEFAULT_STRATEGY = {
     "name": "ICT Reversal Starter",
     "market": "futures",
     "timeframe": "1d",
-    "model_type"
+    "model_type": "swing",
     "entry_model":{
         "require_structure_shift": True,
         "require_cisd": True,
