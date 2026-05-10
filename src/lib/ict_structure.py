@@ -8,7 +8,7 @@ def detect_swings(price_df: pd.DataFrame, swing_window: int = 3) -> pd.DataFrame
     
     for idx in range(swing_window, len(df) - swing_window):
         high_window = df.iloc[idx - swing_window : idx + swing_window + 1]["High"]
-        low_window = df.iloc[idx - swing_window : idx + swing_window + 1["Low"]]
+        low_window = df.iloc[idx - swing_window : idx + swing_window + 1]["Low"]
         current_high = float(df.iloc[idx]["High"])
         current_low = float(df.iloc[idx]["Low"])
         
