@@ -58,3 +58,5 @@ The signal engine starts by downloading OHLCV data for the selected ticker. The 
 | Detect FVG zones | `detect_fvg_zones()` | Marks bullish and bearish fair value gaps. |
 | Add liquidity context | `add_liquidity_context()` | Adds internal and external liquidity touch context. |
 | Evaluate setup | `evaluate_bar_setup()` | Combines strategy requirements into `trade_side` and `setup_valid`. |
+
+## 4.
