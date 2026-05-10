@@ -31,3 +31,6 @@ The workflow is simple. A user selects a ticker, chooses or creates a model, ena
 | Status Badges | Summarizes whether the latest candle has active MSS, FVG, and liquidity sweep context. |
 | Paper Test Summary | Runs a lightweight historical test using generated setup signals. |
 | Screen Results | Shows matching tickers after running the scanner across the configured universe. |
+
+## 2. Core Features
+AlphaLens is organized around transparency. 
