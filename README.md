@@ -59,4 +59,5 @@ The signal engine starts by downloading OHLCV data for the selected ticker. The 
 | Add liquidity context | `add_liquidity_context()` | Adds internal and external liquidity touch context. |
 | Evaluate setup | `evaluate_bar_setup()` | Combines strategy requirements into `trade_side` and `setup_valid`. |
 
-## 4.
+## 4. Signal Timeline
+The Signal Timeline is a recent-bar diagnostic view. In the current implementation, the app displays the last 12 rows of the signal table with **signal_df.tail(12)**. The timestamp index is reset into the **datetime** column, and the selected boolean signal columns 
