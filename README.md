@@ -125,4 +125,7 @@ The paper-testing module uses the generated signal table and enters trades from 
 
 This testing workflow should be treated as a research aid. **It does not include all real-world trading factors such as fees, slippage, spread, liquidity constraints, changing market regimes, or execution quality.**
 
+## 10. Development Notes
+Th
+
 
