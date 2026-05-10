@@ -29,7 +29,7 @@ from src.lib.storage import(
 from src.lib.tradingview_widget import render_tradingview_widget
 
 
-DATA_DIR = os.path.join(APP_PATH, "src", "data")
+DATA_DIR = os.path.join(os.path.dirname(APP_PATH), "src", "data")
 STRATEGIES_PATH = os.path.join(DATA_DIR, "strategies.json")
 TICKERS_PATH = os.path.join(DATA_DIR, "tickers.csv")
 NEW_MODEL_OPTION = "+ Create New Model"
