@@ -85,6 +85,12 @@ The table can look sparse because these are event-driven signals. A moving avera
 
 'pip install -r requirements.txt'
 
+| Package | Purpose |
+| --- | --- |
+| `streamlit` | Runs the interactive dashboard. |
+| `pandas` | Structures and transforms OHLCV and signal data. |
+| `yfinance` | Downloads historical market data from Yahoo Finance. |
+
 ## 7. Running the app
 
 `streamlit run main.py`
