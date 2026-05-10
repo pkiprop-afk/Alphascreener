@@ -83,7 +83,7 @@ def find_recent_external_liquidity(price_df: pd.DataFrame, end_index: int, lookb
     swing_lows = recent[recent["swing_low"] == True]
     
     last_swing_high = float(swing_highs.iloc[-1]["High"]) if not swing_highs.empty else None
-    last_swing_low = float(swing)
+    last_swing_low = float(swing_lows.iloc[-1]["Low"]) if not swing_lows.empty else None
     
     return {
         "external_high": last_swing_high,
