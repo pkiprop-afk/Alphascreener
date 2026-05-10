@@ -62,6 +62,13 @@ def load_strategy_library() -> list[dict]:
     return load_json_file(STRATEGIES_PATH, default=[DEFAULT_STRATEGY])
 
 def initialize_session_state() -> None:
+    """ 
+    Initialize Streamlit session state with default values for the app.
+    This function seeds core configuration, model, and results keys so that downstream components can safely read from session state.
+
+    Returns:
+        None. The function mutates st.session_state in place by setting any missing keys to their default values.
+    """
     defaults = {
         "selected_ticker": "AAPL",
         "selected_model_name": DEFAULT_STRATEGY["name"],
