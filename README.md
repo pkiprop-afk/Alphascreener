@@ -82,6 +82,12 @@ The table can look sparse because these are event-driven signals. A moving avera
 | `src/data/tickers.csv` | Ticker universe used by the search box and scanner. |
 
 ## 6. Installation
-pip install -r requirements.txt
+
+'pip install -r requirements.txt'
+
+## 7. Running the app
+
+`streamlit run main.py`
+
 
 
