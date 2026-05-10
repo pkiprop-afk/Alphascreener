@@ -300,6 +300,16 @@ def build_workspace_data(strategy: dict) -> dict:
     return workspace
         
 def render_signal_timeline(signal_df: pd.DataFrame) -> None:
+    """ 
+    Render a tabular timeline of recent ICT signals for the active ticker.
+    The function highlights key structural and liquidity events in chronological order to support quick visual inspection of setups.
+
+    Args:
+        signal_df: DataFrame containing timestamped signal columns such as structure shifts, FVGs, liquidity sweeps, and setup validity.
+
+    Returns:
+        None. The function renders a Streamlit dataframe or an informational message when no signals are available.
+    """
     st.markdown("#### Signal Timeline")
     if signal_df is None or signal_df.empty:
         st.info("No recent signals to display yet.")
