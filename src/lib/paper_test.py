@@ -106,7 +106,7 @@ def run_backtest_from_signals(price_df: pd.DataFrame, signal_df: pd.DataFrame, r
         if side not in ["long", "short"]:
             continue
         
-        entry_price = float(signal_df.iloc[idx + 1]["Open"])
+        entry_price = float(price_df.iloc[idx + 1]["Open"])
         is_long = side == "long" # --> eliminated the DRY rule
         
         swing_level = row.get("previous_swing_low") if is_long else row.get("previous_swing_high")
