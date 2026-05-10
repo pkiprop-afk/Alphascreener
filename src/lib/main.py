@@ -10,7 +10,7 @@ APP_PATH = os.path.dirname(os.path.abspath(__file__))
 if APP_PATH not in sys.path:
     sys.path.insert(0, APP_PATH)
 
-from src.lib.market_data import (
+from lib.market_data import (
     INTERVAL_TRADINGVIEW_MAP,
     build_signal_table,
     build_summary_latest_setup,
@@ -19,14 +19,14 @@ from src.lib.market_data import (
     run_strategy_scan,
 )
 
-from src.lib.paper_test import run_backtest_from_signals
-from src.lib.storage import(
+from lib.paper_test import run_backtest_from_signals
+from lib.storage import(
     DEFAULT_STRATEGY,
     load_json_file,
     save_or_update_strategy
 )
 
-from src.lib.tradingview_widget import render_tradingview_widget
+from lib.tradingview_widget import render_tradingview_widget
 
 
 DATA_DIR = os.path.join(APP_PATH, "src", "data")
