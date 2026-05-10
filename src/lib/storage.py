@@ -90,7 +90,7 @@ def save_or_update_strategy(file_path: str, strategy_payload: dict) -> None:
     # loads existing strategies and prepares metadata
     strategies = load_json_file(file_path, default=[])
     strategy_name = strategy_payload.get("name", "Unnamed Strategy").strip()
-    now = timestamp_now
+    now = timestamp_now()
     
     # We find the index of an existing strategy if it exists
     existing_index = -1
@@ -114,6 +114,7 @@ def save_or_update_strategy(file_path: str, strategy_payload: dict) -> None:
             "updated_at": now,
         }
         strategies.append(new_strategy)
+    write
 
 def delete_strategy(file_path: str, strategy_name: str) -> None:
     # Load strategies excluding the one to be deleted
