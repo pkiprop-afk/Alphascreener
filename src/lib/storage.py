@@ -114,7 +114,7 @@ def save_or_update_strategy(file_path: str, strategy_payload: dict) -> None:
             "updated_at": now,
         }
         strategies.append(new_strategy)
-    write
+    write_json_file(file_path, strategies)
 
 def delete_strategy(file_path: str, strategy_name: str) -> None:
     # Load strategies excluding the one to be deleted
