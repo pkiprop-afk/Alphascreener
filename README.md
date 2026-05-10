@@ -95,5 +95,8 @@ The table can look sparse because these are event-driven signals. A moving avera
 
 `streamlit run main.py`
 
+The app will open 
+
+## 
 
 
