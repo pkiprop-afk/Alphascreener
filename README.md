@@ -34,3 +34,15 @@ The workflow is simple. A user selects a ticker, chooses or creates a model, ena
 
 ## 2. Core Features
 AlphaLens is organized around transparency. Instead of only producing a final **buy** or **sell** decision, it exposes the underlying conditions that caused a setup to pass or fail
+
+| Feature | Description |
+| --- | --- |
+| Configurable strategy models | Saved models are stored as JSON and can be updated from the Streamlit sidebar. |
+| ICT signal annotation | Historical candles are enriched with structure shifts, CISD, fair value gaps, and liquidity context. |
+| Multi-ticker screening | The app can scan a defined ticker universe and return symbols that match the active model. |
+| Signal timeline | Recent candles are displayed as boolean event flags so the user can audit the setup sequence. |
+| TradingView integration | The middle panel embeds a TradingView widget for chart-based validation. |
+| Paper testing | The app can run a simple backtest from `setup_valid` rows and summarize win rate and total R. |
+| Local persistence | Strategies, ticker lists, watchlists, and backtest data are stored locally under the repository data folders. |
+
+## 3. How the Signal Engine Works
