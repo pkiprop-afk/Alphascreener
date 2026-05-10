@@ -114,4 +114,10 @@ The app persists its local configuration in JSON and CSV files. This makes it ea
 
 A strategy model contains three main sectors. The **entry_model** defines which technical conditions must be present, the **risk_model** defines trade management assumptions, and **filters** defines thresholds used by the signal engine.
 
+| Strategy Section | Example Fields | Purpose |
+| --- | --- | --- |
+| `entry_model` | `require_structure_shift`, `require_cisd`, `require_fvg`, `require_external_liquidity_sweep` | Determines which signals are required before a setup becomes valid. |
+| `risk_model` | `risk_reward`, `max_holding_bars`, `stop_type`, `target_type` | Determines how the paper test estimates exits and results. |
+| `filters` | `swing_window`, `liquidity_lookback`, `fvg_min_pct`, `min_displacement_pct` | Controls how sensitive the signal-detection logic is. |
+
 
