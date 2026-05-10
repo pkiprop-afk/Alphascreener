@@ -52,6 +52,13 @@ def load_ticker_universe() -> list[str]:
 
 @st.cache_data
 def load_strategy_library() -> list[dict]:
+    """ 
+    Load the saved strategy library from the JSON storage file.
+    This function returns a list of strategy configurations, falling back to the default strategy when no file or entries are available.
+
+    Returns:
+        A list of strategy dictionaries representing saved models in the library.
+    """
     return load_json_file(STRATEGIES_PATH, default=[DEFAULT_STRATEGY])
 
 def initialize_session_state() -> None:
