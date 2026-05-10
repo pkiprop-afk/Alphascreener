@@ -112,4 +112,6 @@ The app persists its local configuration in JSON and CSV files. This makes it ea
 | `src/data/watchlist.json` | Stores locally tracked watchlist symbols. |
 | `src/data/backtest_results.json` | Stores or reserves space for paper-test output records. |
 
+A strategy model contains three main sectors. The **entry_model** defines which technical conditions must be present, the 
+
 
