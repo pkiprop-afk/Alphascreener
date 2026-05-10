@@ -27,5 +27,63 @@
     "model_type": "Fractal",
     "created_at": "2026-05-09T22:17:23",
     "updated_at": "2026-05-09T22:17:23"
+  },
+  {
+    "name": "Now model",
+    "market": "futures",
+    "timeframe": "1d",
+    "model_type": "Swing",
+    "entry_model": {
+      "require_structure_shift": true,
+      "require_cisd": true,
+      "require_fvg": true,
+      "require_external_liquidity_sweep": true,
+      "require_internal_liquidity_touch": false,
+      "candle_pattern": "any"
+    },
+    "risk_model": {
+      "stop_type": "swing",
+      "target_type": "risk_reward",
+      "risk_reward": 2.0,
+      "max_holding_bars": 30
+    },
+    "filters": {
+      "swing_window": 3,
+      "liquidity_lookback": 40,
+      "fvg_min_pct": 0.001,
+      "min_displacement_pct": 0.002,
+      "max_bars_after_sweep": 6
+    },
+    "created_at": "2026-05-09T22:25:00",
+    "updated_at": "2026-05-09T22:25:00"
+  },
+  {
+    "name": "Comparing",
+    "market": "futures",
+    "timeframe": "1d",
+    "model_type": "Fractal",
+    "entry_model": {
+      "require_structure_shift": true,
+      "require_cisd": true,
+      "require_fvg": true,
+      "require_external_liquidity_sweep": true,
+      "require_internal_liquidity_touch": false,
+      "candle_pattern": "any"
+    },
+    "risk_model": {
+      "stop_type": "swing",
+      "target_type": "risk_reward",
+      "risk_reward": 4.0,
+      "max_holding_bars": 20
+    },
+    "filters": {
+      "swing_window": 3,
+      "liquidity_lookback": 40,
+      "fvg_min_pct": 0.001,
+      "min_displacement_pct": 0.002,
+      "max_bars_after_sweep": 6
+    },
+    "created_at": "2026-05-09T22:25:21",
+    "updated_at": "2026-05-09T22:25:21"
   }
 ]
