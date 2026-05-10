@@ -334,6 +334,19 @@ def render_lens_panel(strategy: dict, workspace: dict):
         render_signal_timeline(workspace["signal_df"])
 
 def render_status_badge(label: str, active: bool, active_text: str, inactive_text: str) -> None:
+    """ 
+    Render a labeled status badge indicating whether a specific condition is active.
+    The function displays a compact visual indicator with contextual explanatory text for active and inactive states.
+
+    Args:
+        label: Short label describing the condition being reported.
+        active: Boolean flag indicating whether the condition is currently satisfied.
+        active_text: Descriptive text shown when the condition is active.
+        inactive_text: Descriptive text shown when the condition is inactive.
+
+    Returns:
+        None. The function renders Streamlit UI elements in place without returning a value.
+    """
     with st.container(border=True):
         st.markdown(f"**{label}**")
         if active:
