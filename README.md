@@ -9,3 +9,13 @@ The project is built as a practical research dashboard. Its central purpose is t
 ### 3. How the Signal Engine Works
 ### 4. Signal Timeline Explained
 ### 5. Project Structure
+### 6. Installation
+### 7. Running the app
+### 8. Configuration and Data Files
+### 9. Paper Testing
+### 10. Development Notes
+### 11. RoadMap Ideas 
+### 12. Disclaimer
+
+## 1. Overview  
+AlphaLens brings together  
