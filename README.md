@@ -136,7 +136,13 @@ This testing workflow should be treated as a research aid. **It does not include
 | Deployment | Add a deployment guide for Streamlit Community Cloud or another hosting option. |
 
 ## 11. AI Assistance
-
+| AI Contribution Area | How AI Helped | Why It Was Useful |
+| --- | --- | --- |
+| Code review | Helped identify repeated logic and places where the code could become more DRY, meaning easier to maintain by reducing unnecessary repetition. | This supports cleaner modules and lowers the chance that the same logic has to be fixed in multiple places later. |
+| Debugging support | Helped spot small typos, naming mismatches, and syntax issues that affected execution or made the code harder to reason about. | Small mistakes can create large blockers, so using AI as a second reviewer improved development efficiency. |
+| Documentation | Helped generate docstrings, README structure, explanations of modules, and clearer wording for technical concepts. | Better documentation makes the project easier to understand, revisit, and present to others. |
+| Project outline | Helped organize the application into understandable sections such as market data, ICT structure logic, delivery-state logic, FVG logic, storage, and paper testing. | A clearer outline makes the repository more professional and easier to expand. |
+| Future improvement planning | Helped identify next-step improvements such as tests, clearer event-versus-context labeling, better backtest assumptions, and stronger data-error handling. | This creates a roadmap for improving the product efficiently instead of adding features randomly. |
 
 ## 12. Disclaimer
 AlphaLens is a researcher and educational tool. **It should not be interpreted as financial, investment, trading, tax, or legal advice. Market data may be delayed, incomplete, or inaccurate, and technical signals can fail in live market conditions. Always conduct independent research and apply appropriate risk management.**
