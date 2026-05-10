@@ -10,6 +10,10 @@ APP_PATH = os.path.dirname(os.path.abspath(__file__))
 if APP_PATH not in sys.path:
     sys.path.insert(0, APP_PATH)
 
+PROJECT_ROOT = os.path.dirname(APP_PATH)
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
 from src.lib.market_data import (
     INTERVAL_TRADINGVIEW_MAP,
     build_signal_table,
