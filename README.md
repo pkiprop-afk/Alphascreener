@@ -135,6 +135,16 @@ This testing workflow should be treated as a research aid. **It does not include
 | Documentation | Add screenshots, example strategies, and a walkthrough of one complete setup from signal timeline to paper test. |
 | Deployment | Add a deployment guide for Streamlit Community Cloud or another hosting option. |
 
+## 11. Learning Resources
+| Resource | Format | Why It Is Relevant |
+| --- | --- | --- |
+| [Streamlit Tutorials](https://docs.streamlit.io/develop/tutorials) | Official documentation | This is the best starting point for learning Streamlit through step-by-step examples covering app structure, data connections, UI elements, execution flow, and deployment.[4] |
+| [Create an App — Streamlit Docs](https://docs.streamlit.io/get-started/tutorials/create-an-app) | Official tutorial | This tutorial explains how to fetch data into a Pandas dataframe, cache data with `st.cache_data`, display raw data, build charts, and add widgets such as sliders and checkboxes.[5] |
+| [Streamlit Crash Course: From Zero to Data App](https://www.youtube.com/watch?v=d7fnzDQ5qM8) | YouTube video | This official Streamlit video is a practical beginner crash course for turning Python into a working data app.[6] |
+| [Streamlit STOCK Dashboard Using Python](https://www.youtube.com/watch?v=fdFfpEtv5BU) | YouTube video | This tutorial is close to the project’s market-data angle because it shows how to build a stock dashboard with Streamlit and Python.[7] |
+| [Build a Financial Dashboard in Streamlit with yfinance](https://softhints.com/build-a-financial-dashboard-in-streamlit-step-by-step-guide-with-yfinance/) | Written tutorial | This article walks through a financial dashboard with Streamlit, yfinance, ticker input, KPI cards, and price charts, which directly overlaps with this project’s dashboard foundation.[8] |
+| [Create Your Own Stock Market Dashboard with Streamlit and Yfinance](https://www.youtube.com/watch?v=qepyM8VHj9s) | YouTube video | This is another project-style walkthrough showing how Streamlit and yfinance can be combined into a stock-market dashboard.[9] |
+
 ## 11. AI Assistance
 | AI Contribution Area | How AI Helped | Why It Was Useful |
 | --- | --- | --- |
