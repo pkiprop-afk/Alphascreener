@@ -14,8 +14,10 @@ The project is built as a practical research dashboard. Its central purpose is t
 ### 8. Configuration and Data Files
 ### 9. Paper Testing
 ### 10. Development Notes
-### 11. Disclaimer
-### 12.
+### 11. Learning resources
+### 12. AI Assistance
+### 13. Disclaimer
+
 
 ## 1. Overview  
 AlphaLens brings together market data retrieval, ICT-inspired signal generation, and interactive strategy controls inside a single Streamlit dashboard. Streamlit is a Python framework for building interactive data applications, while the app currently uses **yfinance** to retrieve historical market data from Yahoo finance and **pandas** to structure and transform the resulting datasets.
